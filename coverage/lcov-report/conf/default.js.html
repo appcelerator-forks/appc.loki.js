@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for conf/default.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">conf/</a> default.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/1</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * this is your configuration file defaults.
+ *
+ * You can create additional configuration files to that the server will load based on your
+ * environment.  For example, if you want to have specific settings for production which are different
+ * than your local development environment, you can create a production.js and a local.js.  Any changes
+ * in those files will overwrite changes to this file (a object merge is performed). By default, your
+ * local.js file will not be commited to git or the registry.
+ *
+ * This is a JavaScript file (instead of JSON) so you can also perform logic in this file if needed.
+ */
+module.exports = {
+	// these are your generated API keys.  They were generated uniquely when you created this project.
+	// DO NOT SHARE these keys with other projects and be careful with these keys since they control
+	// access to your API using the default configuration.  if you don't want two different keys for
+	// production and test (not recommended), use the key 'apikey'.  To simulate running in production,
+	// set the environment variable NODE_ENV to production before running such as:
+	//
+	// NODE_ENV=production appc run
+	//
+	// production key, this is the key that will be required when you are running in production
+	apikey_production: 'JM7sxRUPgzA8f3dnfdUFI51KoJTYOnt6',
+	// development key, this is the key that will be required when you are testing non-production (such as locally)
+	apikey_development: '6F3AU7VUEpMzoSYs+3HecFAX18NZY5n7',
+	// preproduction key, this is the key that will be required when you are testing non-production (such as locally)
+	apikey_preproduction: 'FTFv4y3btuaii8PS1yI6sQH4X7H7ausm',
+&nbsp;
+	// by default the authentication strategy is 'basic' which will use HTTP Basic Authorization where the
+	// usename is the key and the password is blank.  the other option is 'apikey' where the value of the
+	// APIKey header is the value of the key.  you can also set this to 'plugin' and define the key 'APIKeyAuthPlugin'
+	// which points to a file or a module that implements the authentication strategy
+	APIKeyAuthType: 'basic',
+&nbsp;
+	// The number of milliseconds before timing out a request to the server.
+	timeout: 120000,
+&nbsp;
+	// logging configuration
+	logLevel: 'debug', // Log level of the main logger.
+	logging: {
+		// location of the logs if enabled
+		logdir: './logs',
+		// turn on transaction logs
+		transactionLogEnabled: true
+	},
+&nbsp;
+	// prefix to use for apis
+	apiPrefix: '/api',
+&nbsp;
+	// control the settings for the admin website
+	admin: {
+		// control whether the admin website is available
+		enabled: true,
+		// the prefix to the admin website
+		prefix: '/arrow',
+		// the prefix for the public apidocs website
+		apiDocPrefix: '/apidoc',
+		// if you set disableAuth, in production only your API docs will show up
+		disableAuth: false,
+		// if you set disableAPIDoc, your API docs will not show up (regardless of disableAuth)
+		disableAPIDoc: false,
+		// if you set disableDefault404, Arrow will not register a default 404 handler
+		disableDefault404: false,
+		// set to true to allow the admin website to be accessed in production. however, you will still need a
+		// login unless disableAuth is false. if you set this to false, the admin website will not be enabled
+		// when in production (still respects enabled above)
+		enableAdminInProduction: true,
+		// set the email addresses you want to be able to log in to the admin website
+		validEmails: ["mvasilev@axway.com"],
+		// set the organization ids you want to be able to log in to the admin website
+		validOrgs: [100094705]
+	},
+&nbsp;
+	// you can generally leave this as-is since it is generated for each new project you created.
+	session: {
+		encryptionAlgorithm: 'aes256',
+		encryptionKey: 'AkQNMvTg0kU+E1BfphFnfhYSl3RM+y8ry2X6FBkl+Ek=',
+		signatureAlgorithm: 'sha512-drop256',
+		signatureKey: 'sipZjyURY6nrmzU0b1eIdvHnFkxh5cJD1QWqzcdav2yuji5yw+hROOXrinv822S2NBgBZCexInVWSfnODW7tvA==',
+		secret: 'LL3iCuyfCIn+d7/WtYFXkz7NNYu4xAdQ', // should be a large unguessable string
+		duration: 86400000, // how long the session will stay valid in ms
+		activeDuration: 300000 // if expiresIn &lt; activeDuration, the session will be extended by activeDuration milliseconds
+	},
+&nbsp;
+	// if you want signed cookies, you can set this value. if you don't want signed cookies, remove or make null
+	cookieSecret: 'hdQzNCcTACI6YZkie9sMcE4Bw6PStyru',
+&nbsp;
+	// your connector configuration goes here
+	connectors: {
+		'com.loki.js': {
+			db : 'appc.loki.json',
+			path: '/data/',
+			lokiConfiguration: {
+				autoload : true,
+				serializationMethod: 'pretty'
+			},
+			modelAutogen: true,
+		}
+	}
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Dec 15 2016 14:31:25 GMT+0200 (EET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
