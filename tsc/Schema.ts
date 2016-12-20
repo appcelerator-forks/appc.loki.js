@@ -39,7 +39,7 @@ export class Schema {
         let _fields = ['id'];
         if (typeof collection.data[0] !== "undefined") {
             (Object.keys(collection.data[0])).forEach(function (key) {
-                if (key !== "$loki")
+                if (key !== "$loki" && key !== "meta")
                     _fields.push(key);
             });
         }

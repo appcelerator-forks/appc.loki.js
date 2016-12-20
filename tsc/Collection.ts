@@ -21,6 +21,11 @@ export class Collection {
                 return;
             }
         });
+        //Create collection if it doesn't exist
+        if(!result){
+            result = this._loki.database.addCollection(this.name);
+            this._loki.getDatabase().saveDatabase();
+        }
         return result;
     }
 
