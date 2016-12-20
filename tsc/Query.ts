@@ -27,9 +27,9 @@ export class Query {
      */
     public where(query): Query {
         //Multiple queries
-        if (typeof query === 'Array') {
-            let andStatement = new Object();
-            andStatement['$and'] = new Array();
+        if (typeof query === 'object') {
+            let andStatement = {};
+            andStatement['$and'] = [];
             this._statement = false;
             query.map((data, index) => {
                 //push the new statement to the Array
@@ -134,8 +134,9 @@ export class Query {
             this._statementInitialize();
         }
         let result = this.execute();
-        if (!result || typeof result === "undefined")
-            result = new Array();
+        if (!result || typeof result === "undefined") {
+            result = [];
+        }
         return result;
     }
 
@@ -151,15 +152,16 @@ export class Query {
     protected createQuery(query) {
         if (typeof query === 'string') {
             try {
-                var query = JSON.parse(query);
+                query = JSON.parse(query);
             } catch (error) {
                 throw new Error('Passed query should be an Object!' + error);
             }
         }
-        if (typeof query !== 'object')
+        if (typeof query !== 'object') {
             throw new Error('Passed query should be an Object!');
+        }
         let statement = new Statement();
-        let _resultQuery = new Object();
+        let _resultQuery = {};
         Object.keys(query).forEach((key) => {
             if (statement.checkCommandExists(key)) {
                 _resultQuery = statement.create(key, query[key]);
@@ -183,7 +185,7 @@ export class Query {
 
 class Statement {
 
-    private _commands = new Array();
+    private _commands = [];
 
     constructor() {
         this._commands = [
@@ -205,10 +207,10 @@ class Statement {
 
     //Equal something
     public create(command, data): Object {
-        let result = new Object;
+        let result = {};
         const key = Object.keys(data)[0] || 'id';
         const value = data[key] || undefined;
-        result[key] = new Object();
+        result[key] = {};
         result[key][command] = value;
         return result;
     }

@@ -18,7 +18,7 @@ export class Client {
 
     constructor(private _connector) {
         this.init();
-        this._collectionsInUse = new Array();
+        this._collectionsInUse = [];
     }
 
 
@@ -53,8 +53,9 @@ export class Client {
      */
     public use(collection: string) {
         let _collection = this.collection = this.database.addCollection(collection);
-        if (typeof this._collectionsInUse === "undefined")
-            this._collectionsInUse = new Array();
+        if (typeof this._collectionsInUse === "undefined") {
+            this._collectionsInUse = [];
+        }
         this._collectionsInUse.push(_collection);
         return _collection;
     }

@@ -27,8 +27,9 @@ export class Persist {
         let criteria = new Query(this.collection);
         let model = criteria.findOneById(parseInt(modelId));
         (Object.keys(document)).map((item) => {
-            if (item !== "meta")
+            if (item !== "meta") {
                 model[item] = document[item];
+            }
         });
         if (model) {
             let result = (this.collection).update(model);

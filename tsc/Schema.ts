@@ -3,7 +3,7 @@ export class Schema {
     private _schema;
 
     constructor(protected collections) {
-        this._schema = new Array();
+        this._schema = [];
     }
 
     public getSchema() {
@@ -39,8 +39,9 @@ export class Schema {
         let _fields = ['id'];
         if (typeof collection.data[0] !== "undefined") {
             (Object.keys(collection.data[0])).forEach(function (key) {
-                if (key !== "$loki" && key !== "meta")
+                if (key !== "$loki" && key !== "meta") {
                     _fields.push(key);
+                }
             });
         }
         object.fields = _fields;
