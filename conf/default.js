@@ -86,7 +86,7 @@ module.exports = {
 
 	// your connector configuration goes here
 	connectors: {
-		'com.loki.js': {
+		'appc.loki.js': {
 			db : 'appc.loki.json',
 			path: '/data/',
 			lokiConfiguration: {

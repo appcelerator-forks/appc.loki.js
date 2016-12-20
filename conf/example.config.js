@@ -1,6 +1,6 @@
 module.exports = {
 	connectors: {
-		'com.loki.js': {
+		'appc.loki.js': {
 			db : 'appc.loki.json',
 			path: '../data/',
 		}
