@@ -27,7 +27,7 @@ export class Query {
      */
     public where(query): Query {
         //Multiple queries
-        if (typeof query === 'object') {
+        if (Array.isArray(query)) {
             let andStatement = {};
             andStatement['$and'] = [];
             this._statement = false;

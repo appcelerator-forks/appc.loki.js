@@ -3,7 +3,9 @@
 var Arrow = require('arrow'),
     assert = require('assert'),
     should = require('should'),
-    util = require('util');
+    util = require('util'),
+    fs = require('fs'),
+    path = require('path');
 
 global.dump = dump;
 global.init = init;
@@ -18,7 +20,7 @@ function dump() {
 }
 
 function init(ctx, beforeFn) {
-    
+
     before(function (next) {
         if (state.server) {
             this.server = state.server;
@@ -27,37 +29,19 @@ function init(ctx, beforeFn) {
             next();
         }
         else {
-            this.server = state.server = new Arrow({
-                ignoreDuplicateModels: true,
-                generateModelsFromSchema: true,
-                connectors: {
-                    'appc.arrowdb': {
-                        modelAutogen: true
-                    }
-                }
-            });
-            this.connector = state.connector = this.server.getConnector('appc.arrowdb');
+            //Get the default configuration
+            var default_conf = getConfiguration();
+            default_conf.port = (Math.random() * 40000 + 1200) | 0;
+            this.server = state.server = new Arrow();
+            this.server.config.connectors = default_conf.connectors;  
+            this.connector = state.connector = this.server.getConnector('appc.loki.js');
             this.server.start(function () {
                 beforeFn && beforeFn.call(this);
                 next();
             }.bind(this));
         }
     });
-
-    afterEach(function () {
-        if (this.connector) {
-            this.connector.reset();
-        } else if (state.connector) {
-            state.connector.reset();
-        }
-    });
 }
-
-after(function (cb) {
-    state.connector.disconnect(function () {
-        state.server.stop(cb);
-    });
-});
 
 function assertFailure(err) {
     assert(err);
@@ -81,3 +65,15 @@ function assertFailure(err) {
     should(err.body.meta).have.property('message');
     should(err.body.meta.message).be.a.String;
 }
+
+/**
+ * Returns a configuration object, from ./files/default.js
+ */
+function getConfiguration() {
+    var files = path.join(process.cwd(), 'test/conf');
+    var def_conf = files + '/default.js';
+    return require(def_conf);
+}
+
+
+global.state = state;

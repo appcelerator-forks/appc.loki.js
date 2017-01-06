@@ -40,7 +40,7 @@ jspm_packages
 
 # Visual Stuido Code folders
 .vscode
-
+.vscdebug.js
 # Coverage folder
 coverage
 coverage/

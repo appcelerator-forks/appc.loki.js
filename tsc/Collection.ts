@@ -22,7 +22,7 @@ export class Collection {
             }
         });
         //Create collection if it doesn't exist
-        if(!result){
+        if (!result) {
             result = this._loki.database.addCollection(this.name);
             this._loki.getDatabase().saveDatabase();
         }
@@ -58,6 +58,9 @@ export class Collection {
     private _parseName() {
         if ((this.name).indexOf('com.loki.js') >= 0) {
             this.name = (this.name).replace("com.loki.js/", "");
+        }
+        if ((this.name).indexOf('appc.loki.js') >= 0) {
+            this.name = (this.name).replace("appc.loki.js/", "");
         }
     }
 
