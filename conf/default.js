@@ -94,6 +94,7 @@ module.exports = {
 				serializationMethod: 'pretty'
 			},
 			modelAutogen: true,
+			generateModelsFromSchema: true
 		}
 	}
 };
