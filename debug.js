@@ -14,9 +14,14 @@ env.NODE_PATH = path.resolve(path.join(path.dirname(installBin), '..', 'node_mod
 	(env.NODE_PATH || '');
 var app_config = require('./conf/default');
 //Modify log level
-app_config.logLevel = 'trace';
+// app_config.logLevel = 'trace';
 // And finally run arrow
 var Arrow = require('arrow'),
 	server = new Arrow();
 
 server.start();
+
+
+server.on('started', () => {
+	console.log('Started');
+});
