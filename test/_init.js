@@ -33,7 +33,7 @@ function init(ctx, beforeFn) {
             var default_conf = getConfiguration();
             default_conf.port = (Math.random() * 40000 + 1200) | 0;
             this.server = state.server = new Arrow();
-            this.server.config.connectors = default_conf.connectors;  
+            this.server.config.connectors = default_conf.connectors;
             this.connector = state.connector = this.server.getConnector('appc.loki.js');
             this.server.start(function () {
                 beforeFn && beforeFn.call(this);
