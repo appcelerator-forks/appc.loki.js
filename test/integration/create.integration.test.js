@@ -39,18 +39,6 @@ describe('Create Api tests', (done) => {
         next();
     });
 
-    after(function (next) {
-        request({
-            "url": 'http://localhost:' + server.port + location,
-            "method": "DELETE",
-            "bodyParams": {},
-            "auth": auth,
-            "json": true
-        }, function (err, response, body) {
-            next();
-        });
-    });
-
     describe('Correct data tests', (done) => {
         it('should create new records', function (next) {
             request(options, function (err, response, body) {
@@ -90,6 +78,7 @@ describe('Create Api tests', (done) => {
             };
             next();
         });
+
         it('should not create records without autorization', function (next) {
             request(options, function (err, response, body) {
                 should(response.statusCode).be.equal(401);
@@ -97,6 +86,18 @@ describe('Create Api tests', (done) => {
             });
         });
         done;
+    });
+
+    after(function (next) {
+        request({
+            "url": 'http://localhost:' + server.port + location,
+            "method": "DELETE",
+            "bodyParams": {},
+            "auth": auth,
+            "json": true
+        }, function (err, response, body) {
+            next();
+        });
     });
     done;
 });
