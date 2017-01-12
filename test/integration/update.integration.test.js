@@ -40,18 +40,6 @@ describe('Update Api tests', (done) => {
         next();
     });
 
-    after(function (next) {
-        request({
-            "url": urlToHit + location,
-            "method": "DELETE",
-            "bodyParams": {},
-            "auth": auth,
-            "json": true
-        }, function (err, response, body) {
-            next();
-        });
-    });
-
     describe('Correct data tests', (done) => {
         before(function (next) {
             request({
@@ -125,5 +113,18 @@ describe('Update Api tests', (done) => {
         });
         done;
     });
+
+    after(function (next) {
+        request({
+            "url": urlToHit + location,
+            "method": "DELETE",
+            "bodyParams": {},
+            "auth": auth,
+            "json": true
+        }, function (err, response, body) {
+            next();
+        });
+    });
+
     done;
 });
