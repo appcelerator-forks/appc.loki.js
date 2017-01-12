@@ -25,9 +25,9 @@ describe('Connector findAll', () => {
             should(err).not.be.ok;
             should(result).be.ok;
             result.forEach((item) => {
-                item = item.toPayload();
+                var _item = item.toPayload();
                 _resData.forEach((field) => {
-                    should(item.hasOwnProperty(field)).be.true("Expected '" + field + "' to be a part of this list!");
+                    should(_item.hasOwnProperty(field)).be.true("Expected '" + field + "' to be a part of this list!");
                 });
             });
             next();
