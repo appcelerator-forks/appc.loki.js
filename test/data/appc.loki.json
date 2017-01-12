@@ -1,118 +1,414 @@
 {
-    "filename": "/Users/marinvasilev/Projects/appcelerator/appc.lokijs/data/appc.loki.json",
-    "collections": [
+  "filename": "/Users/viktorchobanov/work/new/appc.loki.js/test/data/appc.loki.json",
+  "collections": [
+    {
+      "name": "users",
+      "data": [
         {
-            "name": "users",
-            "data": [
-                {
-                    "name": "Gustavson",
-                    "weapons": [
-                        "Molmir"
-                    ],
-                    "Age": 32,
-                    "meta": {
-                        "revision": 2,
-                        "created": 1481039112667,
-                        "version": 0,
-                        "updated": 1481739057630
-                    },
-                    "$loki": 1
-                },
-                {
-                    "name": "Gunar Bersaki",
-                    "weapons": "[\"BFG\", \"Rocket Launcher\"]",
-                    "Age": "45",
-                    "meta": {
-                        "revision": 1,
-                        "created": 1481739737259,
-                        "version": 0,
-                        "updated": 1481740562150
-                    },
-                    "$loki": 5
-                },
-                {
-                    "name": "Gunar Bersaki",
-                    "weapons": ["sword"],
-                    "Age": 14,
-                    "meta": {
-                        "revision": 1,
-                        "created": 1481739737261,
-                        "version": 0,
-                        "updated": 1481740562160
-                    },
-                    "$loki": 6
-                }
-            ],
-            "idIndex": [
-                1,
-                5,
-                6
-            ],
-            "binaryIndices": {},
-            "constraints": null,
-            "uniqueNames": [],
-            "transforms": {},
-            "objType": "users",
-            "dirty": true,
-            "cachedIndex": null,
-            "cachedBinaryIndex": null,
-            "cachedData": null,
-            "transactional": false,
-            "cloneObjects": false,
-            "cloneMethod": "parse-stringify",
-            "asyncListeners": false,
-            "disableChangesApi": true,
-            "autoupdate": false,
-            "ttl": {
-                "age": null,
-                "ttlInterval": null,
-                "daemon": null
-            },
-            "maxId": 7,
-            "DynamicViews": [],
-            "events": {
-                "insert": [
-                    null
-                ],
-                "update": [
-                    null
-                ],
-                "pre-insert": [],
-                "pre-update": [],
-                "close": [],
-                "flushbuffer": [],
-                "error": [],
-                "delete": [
-                    null
-                ],
-                "warning": [
-                    null
-                ]
-            },
-            "changes": []
+          "name": "Gustavson",
+          "weapons": "[\"Molmir\"]",
+          "Age": "32",
+          "meta": {
+            "revision": 2,
+            "created": 1481039112667,
+            "version": 0,
+            "updated": 1481739057630
+          },
+          "$loki": 1
+        },
+        {
+          "name": "Gunar Bersaki",
+          "weapons": "[\"BFG\", \"Rocket Launcher\"]",
+          "Age": "45",
+          "meta": {
+            "revision": 1,
+            "created": 1481739737259,
+            "version": 0,
+            "updated": 1481740562150
+          },
+          "$loki": 5
+        },
+        {
+          "name": "Gunar Bersaki",
+          "weapons": "[\"sword\"]",
+          "Age": "14",
+          "meta": {
+            "revision": 1,
+            "created": 1481739737261,
+            "version": 0,
+            "updated": 1481740562160
+          },
+          "$loki": 6
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 8,
+          "meta": {
+            "revision": 0,
+            "created": 1484143613906,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 9,
+          "meta": {
+            "revision": 0,
+            "created": 1484144798506,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 10,
+          "meta": {
+            "revision": 0,
+            "created": 1484144833330,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 11,
+          "meta": {
+            "revision": 0,
+            "created": 1484144883241,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 12,
+          "meta": {
+            "revision": 0,
+            "created": 1484145494490,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 13,
+          "meta": {
+            "revision": 0,
+            "created": 1484145508275,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 14,
+          "meta": {
+            "revision": 0,
+            "created": 1484145554132,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 15,
+          "meta": {
+            "revision": 0,
+            "created": 1484146945000,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 16,
+          "meta": {
+            "revision": 0,
+            "created": 1484146954399,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 17,
+          "meta": {
+            "revision": 0,
+            "created": 1484146959097,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 18,
+          "meta": {
+            "revision": 0,
+            "created": 1484146992360,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 19,
+          "meta": {
+            "revision": 0,
+            "created": 1484147014723,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 20,
+          "meta": {
+            "revision": 0,
+            "created": 1484147090413,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 21,
+          "meta": {
+            "revision": 0,
+            "created": 1484147181613,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 22,
+          "meta": {
+            "revision": 0,
+            "created": 1484147435087,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 23,
+          "meta": {
+            "revision": 0,
+            "created": 1484147435089,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 24,
+          "meta": {
+            "revision": 0,
+            "created": 1484147448255,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 25,
+          "meta": {
+            "revision": 0,
+            "created": 1484148646383,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 26,
+          "meta": {
+            "revision": 0,
+            "created": 1484149733595,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 27,
+          "meta": {
+            "revision": 0,
+            "created": 1484149841790,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 28,
+          "meta": {
+            "revision": 0,
+            "created": 1484149841794,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 29,
+          "meta": {
+            "revision": 0,
+            "created": 1484150123888,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 30,
+          "meta": {
+            "revision": 0,
+            "created": 1484150123891,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 31,
+          "meta": {
+            "revision": 0,
+            "created": 1484150156284,
+            "version": 0
+          }
+        },
+        {
+          "name": "Fiodor Zaiuchuk",
+          "weapons": "['ram']",
+          "Age": "44",
+          "$loki": 32,
+          "meta": {
+            "revision": 0,
+            "created": 1484150345007,
+            "version": 0
+          }
         }
-    ],
-    "databaseVersion": 1.1,
-    "engineVersion": 1.1,
-    "autosave": false,
-    "autosaveInterval": 5000,
-    "autosaveHandle": null,
-    "options": {
-        "autoload": true,
-        "serializationMethod": "pretty"
-    },
-    "persistenceMethod": "fs",
-    "persistenceAdapter": null,
-    "verbose": false,
-    "events": {
-        "init": [
-            null
+      ],
+      "idIndex": [
+        1,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "binaryIndices": {},
+      "constraints": null,
+      "uniqueNames": [],
+      "transforms": {},
+      "objType": "users",
+      "dirty": true,
+      "cachedIndex": null,
+      "cachedBinaryIndex": null,
+      "cachedData": null,
+      "adaptiveBinaryIndices": false,
+      "transactional": false,
+      "cloneObjects": false,
+      "cloneMethod": "parse-stringify",
+      "asyncListeners": false,
+      "disableChangesApi": true,
+      "autoupdate": false,
+      "ttl": null,
+      "maxId": 43,
+      "DynamicViews": [],
+      "events": {
+        "insert": [
+          null
         ],
-        "loaded": [],
-        "flushChanges": [],
+        "update": [
+          null
+        ],
+        "pre-insert": [],
+        "pre-update": [],
         "close": [],
-        "changes": [],
-        "warning": []
-    },
-    "ENV": "NODEJS"
+        "flushbuffer": [],
+        "error": [],
+        "delete": [
+          null
+        ],
+        "warning": [
+          null
+        ]
+      },
+      "changes": []
+    }
+  ],
+  "databaseVersion": 1.1,
+  "engineVersion": 1.1,
+  "autosave": false,
+  "autosaveInterval": 5000,
+  "autosaveHandle": null,
+  "options": {
+    "autoload": true,
+    "serializationMethod": "pretty",
+    "destructureDelimiter": "$<\n"
+  },
+  "persistenceMethod": "fs",
+  "persistenceAdapter": null,
+  "verbose": false,
+  "events": {
+    "init": [
+      null
+    ],
+    "loaded": [],
+    "flushChanges": [],
+    "close": [],
+    "changes": [],
+    "warning": []
+  },
+  "ENV": "NODEJS"
 }
