@@ -1,0 +1,849 @@
+<script type="text/javascript">
+	var ADMIN_URL = 'http://localhost:8080/arrow/testapi',
+		LANGUAGES = ["curl","titanium","node-js","web"];
+</script>
+<h1 id="heading-appc-loki-js-users"><a name="heading-appc-loki-js-users">appc.loki.js/users</a></h1><p>The appc.loki.js/users API</p>
+<p class="controls"><a href="http://localhost:8080/arrow/docs.json?apis/appc.loki.js/users" download="appc.loki.js/users.json" target="_blank" class="btn btn-default btn-xs api-control btn-api-control">Swagger Definition</a><br></p>
+
+<h2 id="heading-find-all"><a name="heading-find-all">Find All</a></h2><blockquote class="unformat">
+<h3 id="heading-curl-example-for-get-api-appc-loki-js-users"><a name="heading-curl-example-for-get-api-appc-loki-js-users">CURL Example for GET /api/appc.loki.js/users</a></h3><p>This is an example you can run from command line using curl:</p>
+
+</blockquote><pre class="highlight curl">curl -u APIKEY: "http://localhost:8080/api/appc.loki.js/users"</pre><blockquote class="unformat">
+<h3 id="heading-titanium-mobile-example-for-get-api-appc-loki-js-users"><a name="heading-titanium-mobile-example-for-get-api-appc-loki-js-users">Titanium Mobile Example for GET /api/appc.loki.js/users</a></h3><p>This is an example you can use in your Titanium app:</p>
+
+</blockquote><pre class="highlight titanium"><span class="hljs-keyword">var</span> xhr = Ti.Network.createHTTPClient({
+    <span class="hljs-attr">onload</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onLoad</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Loaded: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    },
+    <span class="hljs-attr">onerror</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onError</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Errored: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    }
+});
+
+xhr.open(<span class="hljs-string">"GET"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users"</span>);
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + Ti.Utils.base64encode(<span class="hljs-string">'APIKEY:'</span>);
+xhr.setRequestHeader(<span class="hljs-string">"Authorization"</span>, authstr);
+xhr.send();</pre><blockquote class="unformat">
+<h3 id="heading-node-js-example-for-get-api-appc-loki-js-users"><a name="heading-node-js-example-for-get-api-appc-loki-js-users">Node.js Example for GET /api/appc.loki.js/users</a></h3><p>This is an example you can use in your node app:</p>
+
+</blockquote><pre class="highlight node-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">"request"</span>);
+<span class="hljs-keyword">var</span> options = {
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"GET"</span>,
+  <span class="hljs-string">"bodyParams"</span>: {},
+  <span class="hljs-string">"auth"</span>: {
+    <span class="hljs-string">"user"</span>: <span class="hljs-string">"APIKEY"</span>,
+    <span class="hljs-string">"password"</span>: <span class="hljs-string">""</span>
+  },
+  <span class="hljs-string">"gzip"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"json"</span>: <span class="hljs-literal">true</span>
+};
+request(options, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, response, body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"success:"</span>, body.success, <span class="hljs-string">", id:"</span>, body.id);
+});</pre><blockquote class="unformat">
+<h3 id="heading-web-example-for-get-api-appc-loki-js-users"><a name="heading-web-example-for-get-api-appc-loki-js-users">Web Example for GET /api/appc.loki.js/users</a></h3><p>This is an example you can use in your web page:</p>
+
+</blockquote><pre class="highlight web"><span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();
+xhr.onreadystate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.readyState===<span class="hljs-number">4</span>) {
+        alert(<span class="hljs-keyword">this</span>.status+<span class="hljs-string">':'</span>+<span class="hljs-keyword">this</span>.responseText);
+    }
+};
+xhr.open(<span class="hljs-string">"GET"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users"</span>);
+<span class="hljs-comment">//<span class="hljs-doctag">FIXME:</span> you need to fetch your APIKey but not store in code</span>
+<span class="hljs-comment">//It must be returned as a Base64 encoded value "apikey:"</span>
+<span class="hljs-comment">//Define as the APIKEY variable or set below</span>
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + APIKEY.replace(<span class="hljs-regexp">/[\r\n]+/gm</span>,<span class="hljs-string">''</span>);
+xhr.setRequestHeader(<span class="hljs-string">'Authorization'</span>, authstr);
+xhr.send();</pre><p>Find all appc.loki.js/users</p>
+<h3 id="heading-http-request"><a name="heading-http-request">HTTP Request</a></h3><p>GET <a href="http://localhost:8080/api/appc.loki.js/users">http://localhost:8080/api/appc.loki.js/users</a></p>
+<h3 id="heading-http-response"><a name="heading-http-response">HTTP Response</a></h3><p><code>200 OK</code>: The find all succeeded, and the results are available.<br><code>401 Unauthorized</code>: This request requires user authentication, as configured by the server.<br><code>404 Not Found</code>: No results were found.<br><code>500 Internal Server Error</code>: Something went wrong during the request; check out the logs on your server.<br><code>504 Gateway Timeout</code>: The request took too long to process, and the server timed it out.</p>
+<p><h3 class="api-test-heading">API Test</h3></p>
+<div class="panel panel-default api-panel"><div class="panel-body form-horizontal"><div class="col-sm-12"><input type="button" value="Find" data-loading-text="Finding..." id="api_0" class="api-button btn btn-primary" model="" opts="%7B%22url%22:%22http://localhost:8080/api/appc.loki.js/users%22,%22method%22:%22GET%22,%22pathParams%22:%7B%7D,%22queryParams%22:%7B%7D,%22bodyParams%22:%7B%7D,%22templateurl%22:%22http://localhost:8080/api/appc.loki.js/users%22,%22auth%22:%7B%22user%22:%22APIKEY%22,%22password%22:%22%22%7D%7D"/> </div></div></div>
+
+<h2 id="heading-create"><a name="heading-create">Create</a></h2><blockquote class="unformat">
+<h3 id="heading-curl-example-for-post-api-appc-loki-js-users"><a name="heading-curl-example-for-post-api-appc-loki-js-users">CURL Example for POST /api/appc.loki.js/users</a></h3><p>This is an example you can run from command line using curl:</p>
+
+</blockquote><pre class="highlight curl">curl -is -X POST -u APIKEY: "http://localhost:8080/api/appc.loki.js/users" -d '{"0":"","1":"","2":"","3":""}' -H "Content-Type: application/json"</pre><blockquote class="unformat">
+<h3 id="heading-titanium-mobile-example-for-post-api-appc-loki-js-users"><a name="heading-titanium-mobile-example-for-post-api-appc-loki-js-users">Titanium Mobile Example for POST /api/appc.loki.js/users</a></h3><p>This is an example you can use in your Titanium app:</p>
+
+</blockquote><pre class="highlight titanium"><span class="hljs-keyword">var</span> xhr = Ti.Network.createHTTPClient({
+    <span class="hljs-attr">onload</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onLoad</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Loaded: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    },
+    <span class="hljs-attr">onerror</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onError</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Errored: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    }
+});
+
+xhr.open(<span class="hljs-string">"POST"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users"</span>);
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + Ti.Utils.base64encode(<span class="hljs-string">'APIKEY:'</span>);
+xhr.setRequestHeader(<span class="hljs-string">"Authorization"</span>, authstr);
+xhr.setRequestHeader(<span class="hljs-string">"Content-Type"</span>,<span class="hljs-string">"application/json"</span>);
+xhr.send(<span class="hljs-built_in">JSON</span>.stringify({
+    <span class="hljs-string">"0"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"1"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"2"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"3"</span>: <span class="hljs-string">""</span>
+}));</pre><blockquote class="unformat">
+<h3 id="heading-node-js-example-for-post-api-appc-loki-js-users"><a name="heading-node-js-example-for-post-api-appc-loki-js-users">Node.js Example for POST /api/appc.loki.js/users</a></h3><p>This is an example you can use in your node app:</p>
+
+</blockquote><pre class="highlight node-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">"request"</span>);
+<span class="hljs-keyword">var</span> options = {
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"POST"</span>,
+  <span class="hljs-string">"bodyParams"</span>: {},
+  <span class="hljs-string">"auth"</span>: {
+    <span class="hljs-string">"user"</span>: <span class="hljs-string">"APIKEY"</span>,
+    <span class="hljs-string">"password"</span>: <span class="hljs-string">""</span>
+  },
+  <span class="hljs-string">"json"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"gzip"</span>: <span class="hljs-literal">true</span>
+};
+request(options, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, response, body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"success:"</span>, body.success, <span class="hljs-string">", id:"</span>, body.id);
+});</pre><blockquote class="unformat">
+<h3 id="heading-web-example-for-post-api-appc-loki-js-users"><a name="heading-web-example-for-post-api-appc-loki-js-users">Web Example for POST /api/appc.loki.js/users</a></h3><p>This is an example you can use in your web page:</p>
+
+</blockquote><pre class="highlight web"><span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();
+xhr.onreadystate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.readyState===<span class="hljs-number">4</span>) {
+        alert(<span class="hljs-keyword">this</span>.status+<span class="hljs-string">':'</span>+<span class="hljs-keyword">this</span>.responseText);
+    }
+};
+xhr.open(<span class="hljs-string">"POST"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users"</span>);
+<span class="hljs-comment">//<span class="hljs-doctag">FIXME:</span> you need to fetch your APIKey but not store in code</span>
+<span class="hljs-comment">//It must be returned as a Base64 encoded value "apikey:"</span>
+<span class="hljs-comment">//Define as the APIKEY variable or set below</span>
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + APIKEY.replace(<span class="hljs-regexp">/[\r\n]+/gm</span>,<span class="hljs-string">''</span>);
+xhr.setRequestHeader(<span class="hljs-string">'Authorization'</span>, authstr);
+xhr.setRequestHeader(<span class="hljs-string">'Content-Type'</span>,<span class="hljs-string">'application/json'</span>);
+xhr.send(<span class="hljs-built_in">JSON</span>.stringify({
+    <span class="hljs-string">"0"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"1"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"2"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"3"</span>: <span class="hljs-string">""</span>
+}));</pre><p>Create a appc.loki.js/user</p>
+<h3 id="heading-http-request"><a name="heading-http-request">HTTP Request</a></h3><p>POST <a href="http://localhost:8080/api/appc.loki.js/users">http://localhost:8080/api/appc.loki.js/users</a></p>
+<h3 id="heading-body-parameters"><a name="heading-body-parameters">Body Parameters</a></h3><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>string</td>
+<td>false</td>
+<td>N/A</td>
+<td>0 field</td>
+</tr>
+<tr>
+<td>1</td>
+<td>string</td>
+<td>false</td>
+<td>N/A</td>
+<td>1 field</td>
+</tr>
+<tr>
+<td>2</td>
+<td>string</td>
+<td>false</td>
+<td>N/A</td>
+<td>2 field</td>
+</tr>
+<tr>
+<td>3</td>
+<td>string</td>
+<td>false</td>
+<td>N/A</td>
+<td>3 field</td>
+</tr>
+</tbody>
+</table>
+<h3 id="heading-http-response"><a name="heading-http-response">HTTP Response</a></h3><p><code>201 Created</code>: The create succeeded.<br><code>401 Unauthorized</code>: This request requires user authentication, as configured by the server.<br><code>404 Not Found</code>: No results were found.<br><code>500 Internal Server Error</code>: Something went wrong during the request; check out the logs on your server.<br><code>504 Gateway Timeout</code>: The request took too long to process, and the server timed it out.</p>
+<p><h3 class="api-test-heading">API Test</h3></p>
+<div class="panel panel-default api-panel"><div class="panel-body form-horizontal"><label for="api_1_body" class="col-sm-12 text-left">body</label><div class="col-sm-12"><input name="body" replace-with-textarea="true" type="textarea" for-api="api_1" class="api form-control" /></div><div class="col-sm-12"><input type="button" value="Create" data-loading-text="Creating..." id="api_1" class="api-button btn btn-primary" model="%7B%0A%09%220%22%3A%20%22%22%2C%0A%09%221%22%3A%20%22%22%2C%0A%09%222%22%3A%20%22%22%2C%0A%09%223%22%3A%20%22%22%0A%7D" opts="%7B%22url%22:%22http://localhost:8080/api/appc.loki.js/users%22,%22method%22:%22POST%22,%22pathParams%22:%7B%7D,%22queryParams%22:%7B%7D,%22bodyParams%22:%7B%220%22:%7B%22description%22:%220%20field%22,%22dataType%22:%22string%22,%22type%22:%22body%22,%22required%22:false,%22optional%22:true,%22name%22:%220%22%7D,%221%22:%7B%22description%22:%221%20field%22,%22dataType%22:%22string%22,%22type%22:%22body%22,%22required%22:false,%22optional%22:true,%22name%22:%221%22%7D,%222%22:%7B%22description%22:%222%20field%22,%22dataType%22:%22string%22,%22type%22:%22body%22,%22required%22:false,%22optional%22:true,%22name%22:%222%22%7D,%223%22:%7B%22description%22:%223%20field%22,%22dataType%22:%22string%22,%22type%22:%22body%22,%22required%22:false,%22optional%22:true,%22name%22:%223%22%7D%7D,%22templateurl%22:%22http://localhost:8080/api/appc.loki.js/users%22,%22auth%22:%7B%22user%22:%22APIKEY%22,%22password%22:%22%22%7D%7D"/> <input type="button" value="Clear" data-for="api_1" class="btn api-clear btn-clear" /></div></div></div>
+
+<h2 id="heading-query"><a name="heading-query">Query</a></h2><blockquote class="unformat">
+<h3 id="heading-curl-example-for-get-api-appc-loki-js-users-query"><a name="heading-curl-example-for-get-api-appc-loki-js-users-query">CURL Example for GET /api/appc.loki.js/users/query</a></h3><p>This is an example you can run from command line using curl:</p>
+
+</blockquote><pre class="highlight curl">curl -u APIKEY: "http://localhost:8080/api/appc.loki.js/users/query?limit=10&page=1&per_page=10"</pre><blockquote class="unformat">
+<h3 id="heading-titanium-mobile-example-for-get-api-appc-loki-js-users-query"><a name="heading-titanium-mobile-example-for-get-api-appc-loki-js-users-query">Titanium Mobile Example for GET /api/appc.loki.js/users/query</a></h3><p>This is an example you can use in your Titanium app:</p>
+
+</blockquote><pre class="highlight titanium"><span class="hljs-keyword">var</span> xhr = Ti.Network.createHTTPClient({
+    <span class="hljs-attr">onload</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onLoad</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Loaded: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    },
+    <span class="hljs-attr">onerror</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onError</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Errored: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    }
+});
+
+xhr.open(<span class="hljs-string">"GET"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/query?limit=10&amp;skip=0&amp;where=undefined&amp;order=undefined&amp;sel=undefined&amp;unsel=undefined&amp;page=1&amp;per_page=10"</span>);
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + Ti.Utils.base64encode(<span class="hljs-string">'APIKEY:'</span>);
+xhr.setRequestHeader(<span class="hljs-string">"Authorization"</span>, authstr);
+xhr.send();</pre><blockquote class="unformat">
+<h3 id="heading-node-js-example-for-get-api-appc-loki-js-users-query"><a name="heading-node-js-example-for-get-api-appc-loki-js-users-query">Node.js Example for GET /api/appc.loki.js/users/query</a></h3><p>This is an example you can use in your node app:</p>
+
+</blockquote><pre class="highlight node-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">"request"</span>);
+<span class="hljs-keyword">var</span> options = {
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/query?limit=10&amp;skip=0&amp;where=undefined&amp;order=undefined&amp;sel=undefined&amp;unsel=undefined&amp;page=1&amp;per_page=10"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"GET"</span>,
+  <span class="hljs-string">"bodyParams"</span>: {},
+  <span class="hljs-string">"auth"</span>: {
+    <span class="hljs-string">"user"</span>: <span class="hljs-string">"APIKEY"</span>,
+    <span class="hljs-string">"password"</span>: <span class="hljs-string">""</span>
+  },
+  <span class="hljs-string">"gzip"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"json"</span>: <span class="hljs-literal">true</span>
+};
+request(options, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, response, body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"success:"</span>, body.success, <span class="hljs-string">", id:"</span>, body.id);
+});</pre><blockquote class="unformat">
+<h3 id="heading-web-example-for-get-api-appc-loki-js-users-query"><a name="heading-web-example-for-get-api-appc-loki-js-users-query">Web Example for GET /api/appc.loki.js/users/query</a></h3><p>This is an example you can use in your web page:</p>
+
+</blockquote><pre class="highlight web"><span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();
+xhr.onreadystate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.readyState===<span class="hljs-number">4</span>) {
+        alert(<span class="hljs-keyword">this</span>.status+<span class="hljs-string">':'</span>+<span class="hljs-keyword">this</span>.responseText);
+    }
+};
+xhr.open(<span class="hljs-string">"GET"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/query?limit=10&amp;skip=0&amp;where=undefined&amp;order=undefined&amp;sel=undefined&amp;unsel=undefined&amp;page=1&amp;per_page=10"</span>);
+<span class="hljs-comment">//<span class="hljs-doctag">FIXME:</span> you need to fetch your APIKey but not store in code</span>
+<span class="hljs-comment">//It must be returned as a Base64 encoded value "apikey:"</span>
+<span class="hljs-comment">//Define as the APIKEY variable or set below</span>
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + APIKEY.replace(<span class="hljs-regexp">/[\r\n]+/gm</span>,<span class="hljs-string">''</span>);
+xhr.setRequestHeader(<span class="hljs-string">'Authorization'</span>, authstr);
+xhr.send();</pre><p>Query appc.loki.js/users</p>
+<h3 id="heading-http-request"><a name="heading-http-request">HTTP Request</a></h3><p>GET <a href="http://localhost:8080/api/appc.loki.js/users/query">http://localhost:8080/api/appc.loki.js/users/query</a></p>
+<h3 id="heading-query-parameters"><a name="heading-query-parameters">Query Parameters</a></h3><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit</td>
+<td>number</td>
+<td>false</td>
+<td>10</td>
+<td>The number of records to fetch. The value must be greater than 0, and no greater than 1000.</td>
+</tr>
+<tr>
+<td>skip</td>
+<td>number</td>
+<td>false</td>
+<td>N/A</td>
+<td>The number of records to skip. The value must not be less than 0.</td>
+</tr>
+<tr>
+<td>where</td>
+<td>object</td>
+<td>false</td>
+<td>N/A</td>
+<td>Constrains values for fields. The value should be encoded JSON.</td>
+</tr>
+<tr>
+<td>order</td>
+<td>object</td>
+<td>false</td>
+<td>N/A</td>
+<td>A dictionary of one or more fields specifying sorting of results. In general, you can sort based on any predefined field that you can query using the where operator, as well as on custom fields. The value should be encoded JSON.</td>
+</tr>
+<tr>
+<td>sel</td>
+<td>object</td>
+<td>false</td>
+<td>N/A</td>
+<td>Selects which fields to return from the query. Others are excluded. The value should be encoded JSON.</td>
+</tr>
+<tr>
+<td>unsel</td>
+<td>object</td>
+<td>false</td>
+<td>N/A</td>
+<td>Selects which fields to not return from the query. Others are included. The value should be encoded JSON.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>number</td>
+<td>false</td>
+<td>1</td>
+<td>Request page number starting from 1.</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>number</td>
+<td>false</td>
+<td>10</td>
+<td>Number of results per page.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="heading-http-response"><a name="heading-http-response">HTTP Response</a></h3><p><code>200 OK</code>: The query succeeded, and the results are available.<br><code>401 Unauthorized</code>: This request requires user authentication, as configured by the server.<br><code>404 Not Found</code>: No results were found.<br><code>500 Internal Server Error</code>: Something went wrong during the request; check out the logs on your server.<br><code>504 Gateway Timeout</code>: The request took too long to process, and the server timed it out.</p>
+<p><h3 class="api-test-heading">API Test</h3></p>
+<div class="panel panel-default api-panel"><div class="panel-body form-horizontal"><label for="api_2_limit" class="col-sm-2 text-left">limit</label><div class="col-sm-4"><input name="limit" id="api_2_limit" for-api="api_2" type="text" class="api form-control" /></div><label for="api_2_skip" class="col-sm-2 text-left">skip</label><div class="col-sm-4"><input name="skip" id="api_2_skip" for-api="api_2" type="text" class="api form-control" /></div><label for="api_2_where" class="col-sm-2 text-left">where</label><div class="col-sm-4"><input name="where" id="api_2_where" for-api="api_2" type="text" class="api form-control" /></div><label for="api_2_order" class="col-sm-2 text-left">order</label><div class="col-sm-4"><input name="order" id="api_2_order" for-api="api_2" type="text" class="api form-control" /></div><label for="api_2_sel" class="col-sm-2 text-left">sel</label><div class="col-sm-4"><input name="sel" id="api_2_sel" for-api="api_2" type="text" class="api form-control" /></div><label for="api_2_unsel" class="col-sm-2 text-left">unsel</label><div class="col-sm-4"><input name="unsel" id="api_2_unsel" for-api="api_2" type="text" class="api form-control" /></div><label for="api_2_page" class="col-sm-2 text-left">page</label><div class="col-sm-4"><input name="page" id="api_2_page" for-api="api_2" type="text" class="api form-control" /></div><label for="api_2_per_page" class="col-sm-2 text-left">per_page</label><div class="col-sm-4"><input name="per_page" id="api_2_per_page" for-api="api_2" type="text" class="api form-control" /></div><div class="col-sm-12"><input type="button" value="Find" data-loading-text="Finding..." id="api_2" class="api-button btn btn-primary" model="" opts="%7B%22url%22:%22http://localhost:8080/api/appc.loki.js/users/query%22,%22method%22:%22GET%22,%22pathParams%22:%7B%7D,%22queryParams%22:%7B%22limit%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22default%22:10,%22dataType%22:%22number%22,%22description%22:%22The%20number%20of%20records%20to%20fetch.%20The%20value%20must%20be%20greater%20than%200,%20and%20no%20greater%20than%201000.%22,%22name%22:%22limit%22%7D,%22skip%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22default%22:0,%22dataType%22:%22number%22,%22description%22:%22The%20number%20of%20records%20to%20skip.%20The%20value%20must%20not%20be%20less%20than%200.%22,%22name%22:%22skip%22%7D,%22where%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22dataType%22:%22object%22,%22description%22:%22Constrains%20values%20for%20fields.%20The%20value%20should%20be%20encoded%20JSON.%22,%22name%22:%22where%22%7D,%22order%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22dataType%22:%22object%22,%22description%22:%22A%20dictionary%20of%20one%20or%20more%20fields%20specifying%20sorting%20of%20results.%20In%20general,%20you%20can%20sort%20based%20on%20any%20predefined%20field%20that%20you%20can%20query%20using%20the%20where%20operator,%20as%20well%20as%20on%20custom%20fields.%20The%20value%20should%20be%20encoded%20JSON.%22,%22name%22:%22order%22%7D,%22sel%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22dataType%22:%22object%22,%22description%22:%22Selects%20which%20fields%20to%20return%20from%20the%20query.%20Others%20are%20excluded.%20The%20value%20should%20be%20encoded%20JSON.%22,%22name%22:%22sel%22%7D,%22unsel%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22dataType%22:%22object%22,%22description%22:%22Selects%20which%20fields%20to%20not%20return%20from%20the%20query.%20Others%20are%20included.%20The%20value%20should%20be%20encoded%20JSON.%22,%22name%22:%22unsel%22%7D,%22page%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22default%22:1,%22dataType%22:%22number%22,%22description%22:%22Request%20page%20number%20starting%20from%201.%22,%22name%22:%22page%22%7D,%22per_page%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22default%22:10,%22dataType%22:%22number%22,%22description%22:%22Number%20of%20results%20per%20page.%22,%22name%22:%22per_page%22%7D%7D,%22bodyParams%22:%7B%7D,%22templateurl%22:%22http://localhost:8080/api/appc.loki.js/users/query%22,%22auth%22:%7B%22user%22:%22APIKEY%22,%22password%22:%22%22%7D%7D"/> </div></div></div>
+
+<h2 id="heading-find-by-id"><a name="heading-find-by-id">Find By ID</a></h2><blockquote class="unformat">
+<h3 id="heading-curl-example-for-get-api-appc-loki-js-users-id"><a name="heading-curl-example-for-get-api-appc-loki-js-users-id">CURL Example for GET /api/appc.loki.js/users/:id</a></h3><p>This is an example you can run from command line using curl:</p>
+
+</blockquote><pre class="highlight curl">curl -u APIKEY: "http://localhost:8080/api/appc.loki.js/users/ID"</pre><blockquote class="unformat">
+<h3 id="heading-titanium-mobile-example-for-get-api-appc-loki-js-users-id"><a name="heading-titanium-mobile-example-for-get-api-appc-loki-js-users-id">Titanium Mobile Example for GET /api/appc.loki.js/users/:id</a></h3><p>This is an example you can use in your Titanium app:</p>
+
+</blockquote><pre class="highlight titanium"><span class="hljs-keyword">var</span> xhr = Ti.Network.createHTTPClient({
+    <span class="hljs-attr">onload</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onLoad</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Loaded: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    },
+    <span class="hljs-attr">onerror</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onError</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Errored: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    }
+});
+
+xhr.open(<span class="hljs-string">"GET"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/ID"</span>);
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + Ti.Utils.base64encode(<span class="hljs-string">'APIKEY:'</span>);
+xhr.setRequestHeader(<span class="hljs-string">"Authorization"</span>, authstr);
+xhr.send();</pre><blockquote class="unformat">
+<h3 id="heading-node-js-example-for-get-api-appc-loki-js-users-id"><a name="heading-node-js-example-for-get-api-appc-loki-js-users-id">Node.js Example for GET /api/appc.loki.js/users/:id</a></h3><p>This is an example you can use in your node app:</p>
+
+</blockquote><pre class="highlight node-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">"request"</span>);
+<span class="hljs-keyword">var</span> options = {
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/ID"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"GET"</span>,
+  <span class="hljs-string">"bodyParams"</span>: {},
+  <span class="hljs-string">"auth"</span>: {
+    <span class="hljs-string">"user"</span>: <span class="hljs-string">"APIKEY"</span>,
+    <span class="hljs-string">"password"</span>: <span class="hljs-string">""</span>
+  },
+  <span class="hljs-string">"gzip"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"json"</span>: <span class="hljs-literal">true</span>
+};
+request(options, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, response, body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"success:"</span>, body.success, <span class="hljs-string">", id:"</span>, body.id);
+});</pre><blockquote class="unformat">
+<h3 id="heading-web-example-for-get-api-appc-loki-js-users-id"><a name="heading-web-example-for-get-api-appc-loki-js-users-id">Web Example for GET /api/appc.loki.js/users/:id</a></h3><p>This is an example you can use in your web page:</p>
+
+</blockquote><pre class="highlight web"><span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();
+xhr.onreadystate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.readyState===<span class="hljs-number">4</span>) {
+        alert(<span class="hljs-keyword">this</span>.status+<span class="hljs-string">':'</span>+<span class="hljs-keyword">this</span>.responseText);
+    }
+};
+xhr.open(<span class="hljs-string">"GET"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/ID"</span>);
+<span class="hljs-comment">//<span class="hljs-doctag">FIXME:</span> you need to fetch your APIKey but not store in code</span>
+<span class="hljs-comment">//It must be returned as a Base64 encoded value "apikey:"</span>
+<span class="hljs-comment">//Define as the APIKEY variable or set below</span>
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + APIKEY.replace(<span class="hljs-regexp">/[\r\n]+/gm</span>,<span class="hljs-string">''</span>);
+xhr.setRequestHeader(<span class="hljs-string">'Authorization'</span>, authstr);
+xhr.send();</pre><p>Find one appc.loki.js/user by ID</p>
+<h3 id="heading-http-request"><a name="heading-http-request">HTTP Request</a></h3><p>GET <a href="http://localhost:8080/api/appc.loki.js/users/:id">http://localhost:8080/api/appc.loki.js/users/:id</a></p>
+<h3 id="heading-path-parameters"><a name="heading-path-parameters">Path Parameters</a></h3><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>N/A</td>
+<td>The find succeeded, and the results are available.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="heading-http-response"><a name="heading-http-response">HTTP Response</a></h3><p><code>200 OK</code>: appc.loki.js/users Response<br><code>401 Unauthorized</code>: This request requires user authentication, as configured by the server.<br><code>404 Not Found</code>: No results were found.<br><code>500 Internal Server Error</code>: Something went wrong during the request; check out the logs on your server.<br><code>504 Gateway Timeout</code>: The request took too long to process, and the server timed it out.</p>
+<p><h3 class="api-test-heading">API Test</h3></p>
+<div class="panel panel-default api-panel"><div class="panel-body form-horizontal"><label for="api_3_id" class="col-sm-2 text-left">id</label><div class="col-sm-4"><input name="id" id="api_3_id" for-api="api_3" type="text" class="api form-control" /></div><div class="col-sm-12"><input type="button" value="Find" data-loading-text="Finding..." id="api_3" class="api-button btn btn-primary" model="" opts="%7B%22url%22:%22http://localhost:8080/api/appc.loki.js/users/:id%22,%22method%22:%22GET%22,%22pathParams%22:%7B%22id%22:%7B%22description%22:%22The%20find%20succeeded,%20and%20the%20results%20are%20available.%22,%22optional%22:false,%22required%22:true,%22type%22:%22path%22,%22dataType%22:%22string%22,%22name%22:%22id%22%7D%7D,%22queryParams%22:%7B%7D,%22bodyParams%22:%7B%7D,%22templateurl%22:%22http://localhost:8080/api/appc.loki.js/users/:id%22,%22auth%22:%7B%22user%22:%22APIKEY%22,%22password%22:%22%22%7D%7D"/> </div></div></div>
+
+<h2 id="heading-update"><a name="heading-update">Update</a></h2><blockquote class="unformat">
+<h3 id="heading-curl-example-for-put-api-appc-loki-js-users-id"><a name="heading-curl-example-for-put-api-appc-loki-js-users-id">CURL Example for PUT /api/appc.loki.js/users/:id</a></h3><p>This is an example you can run from command line using curl:</p>
+
+</blockquote><pre class="highlight curl">curl -is -X PUT -u APIKEY: "http://localhost:8080/api/appc.loki.js/users/ID" -d '{"0":"","1":"","2":"","3":""}' -H "Content-Type: application/json"</pre><blockquote class="unformat">
+<h3 id="heading-titanium-mobile-example-for-put-api-appc-loki-js-users-id"><a name="heading-titanium-mobile-example-for-put-api-appc-loki-js-users-id">Titanium Mobile Example for PUT /api/appc.loki.js/users/:id</a></h3><p>This is an example you can use in your Titanium app:</p>
+
+</blockquote><pre class="highlight titanium"><span class="hljs-keyword">var</span> xhr = Ti.Network.createHTTPClient({
+    <span class="hljs-attr">onload</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onLoad</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Loaded: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    },
+    <span class="hljs-attr">onerror</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onError</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Errored: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    }
+});
+
+xhr.open(<span class="hljs-string">"PUT"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/ID"</span>);
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + Ti.Utils.base64encode(<span class="hljs-string">'APIKEY:'</span>);
+xhr.setRequestHeader(<span class="hljs-string">"Authorization"</span>, authstr);
+xhr.setRequestHeader(<span class="hljs-string">"Content-Type"</span>,<span class="hljs-string">"application/json"</span>);
+xhr.send(<span class="hljs-built_in">JSON</span>.stringify({
+    <span class="hljs-string">"0"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"1"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"2"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"3"</span>: <span class="hljs-string">""</span>
+}));</pre><blockquote class="unformat">
+<h3 id="heading-node-js-example-for-put-api-appc-loki-js-users-id"><a name="heading-node-js-example-for-put-api-appc-loki-js-users-id">Node.js Example for PUT /api/appc.loki.js/users/:id</a></h3><p>This is an example you can use in your node app:</p>
+
+</blockquote><pre class="highlight node-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">"request"</span>);
+<span class="hljs-keyword">var</span> options = {
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/ID"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"PUT"</span>,
+  <span class="hljs-string">"bodyParams"</span>: {},
+  <span class="hljs-string">"auth"</span>: {
+    <span class="hljs-string">"user"</span>: <span class="hljs-string">"APIKEY"</span>,
+    <span class="hljs-string">"password"</span>: <span class="hljs-string">""</span>
+  },
+  <span class="hljs-string">"json"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"gzip"</span>: <span class="hljs-literal">true</span>
+};
+request(options, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, response, body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"success:"</span>, body.success, <span class="hljs-string">", id:"</span>, body.id);
+});</pre><blockquote class="unformat">
+<h3 id="heading-web-example-for-put-api-appc-loki-js-users-id"><a name="heading-web-example-for-put-api-appc-loki-js-users-id">Web Example for PUT /api/appc.loki.js/users/:id</a></h3><p>This is an example you can use in your web page:</p>
+
+</blockquote><pre class="highlight web"><span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();
+xhr.onreadystate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.readyState===<span class="hljs-number">4</span>) {
+        alert(<span class="hljs-keyword">this</span>.status+<span class="hljs-string">':'</span>+<span class="hljs-keyword">this</span>.responseText);
+    }
+};
+xhr.open(<span class="hljs-string">"PUT"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/ID"</span>);
+<span class="hljs-comment">//<span class="hljs-doctag">FIXME:</span> you need to fetch your APIKey but not store in code</span>
+<span class="hljs-comment">//It must be returned as a Base64 encoded value "apikey:"</span>
+<span class="hljs-comment">//Define as the APIKEY variable or set below</span>
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + APIKEY.replace(<span class="hljs-regexp">/[\r\n]+/gm</span>,<span class="hljs-string">''</span>);
+xhr.setRequestHeader(<span class="hljs-string">'Authorization'</span>, authstr);
+xhr.setRequestHeader(<span class="hljs-string">'Content-Type'</span>,<span class="hljs-string">'application/json'</span>);
+xhr.send(<span class="hljs-built_in">JSON</span>.stringify({
+    <span class="hljs-string">"0"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"1"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"2"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"3"</span>: <span class="hljs-string">""</span>
+}));</pre><p>Update a specific appc.loki.js/user</p>
+<h3 id="heading-http-request"><a name="heading-http-request">HTTP Request</a></h3><p>PUT <a href="http://localhost:8080/api/appc.loki.js/users/:id">http://localhost:8080/api/appc.loki.js/users/:id</a></p>
+<h3 id="heading-path-parameters"><a name="heading-path-parameters">Path Parameters</a></h3><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>N/A</td>
+<td>The appc.loki.js/user ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="heading-body-parameters"><a name="heading-body-parameters">Body Parameters</a></h3><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>string</td>
+<td>false</td>
+<td>N/A</td>
+<td>0 field</td>
+</tr>
+<tr>
+<td>1</td>
+<td>string</td>
+<td>false</td>
+<td>N/A</td>
+<td>1 field</td>
+</tr>
+<tr>
+<td>2</td>
+<td>string</td>
+<td>false</td>
+<td>N/A</td>
+<td>2 field</td>
+</tr>
+<tr>
+<td>3</td>
+<td>string</td>
+<td>false</td>
+<td>N/A</td>
+<td>3 field</td>
+</tr>
+</tbody>
+</table>
+<h3 id="heading-http-response"><a name="heading-http-response">HTTP Response</a></h3><p><code>204 No Content</code>: The update succeeded.<br><code>401 Unauthorized</code>: This request requires user authentication, as configured by the server.<br><code>404 Not Found</code>: No results were found.<br><code>500 Internal Server Error</code>: Something went wrong during the request; check out the logs on your server.<br><code>504 Gateway Timeout</code>: The request took too long to process, and the server timed it out.</p>
+<p><h3 class="api-test-heading">API Test</h3></p>
+<div class="panel panel-default api-panel"><div class="panel-body form-horizontal"><label for="api_4_id" class="col-sm-2 text-left">id</label><div class="col-sm-4"><input name="id" id="api_4_id" for-api="api_4" type="text" class="api form-control" /></div><label for="api_4_body" class="col-sm-12 text-left">body</label><div class="col-sm-12"><input name="body" replace-with-textarea="true" type="textarea" for-api="api_4" class="api form-control" /></div><div class="col-sm-12"><input type="button" value="Update" data-loading-text="Updating..." id="api_4" class="api-button btn btn-primary" model="%7B%0A%09%220%22%3A%20%22%22%2C%0A%09%221%22%3A%20%22%22%2C%0A%09%222%22%3A%20%22%22%2C%0A%09%223%22%3A%20%22%22%0A%7D" opts="%7B%22url%22:%22http://localhost:8080/api/appc.loki.js/users/:id%22,%22method%22:%22PUT%22,%22pathParams%22:%7B%22id%22:%7B%22description%22:%22The%20appc.loki.js/user%20ID%22,%22required%22:true,%22optional%22:false,%22type%22:%22path%22,%22dataType%22:%22string%22,%22name%22:%22id%22%7D%7D,%22queryParams%22:%7B%7D,%22bodyParams%22:%7B%220%22:%7B%22description%22:%220%20field%22,%22dataType%22:%22string%22,%22type%22:%22body%22,%22required%22:false,%22optional%22:true,%22name%22:%220%22%7D,%221%22:%7B%22description%22:%221%20field%22,%22dataType%22:%22string%22,%22type%22:%22body%22,%22required%22:false,%22optional%22:true,%22name%22:%221%22%7D,%222%22:%7B%22description%22:%222%20field%22,%22dataType%22:%22string%22,%22type%22:%22body%22,%22required%22:false,%22optional%22:true,%22name%22:%222%22%7D,%223%22:%7B%22description%22:%223%20field%22,%22dataType%22:%22string%22,%22type%22:%22body%22,%22required%22:false,%22optional%22:true,%22name%22:%223%22%7D%7D,%22templateurl%22:%22http://localhost:8080/api/appc.loki.js/users/:id%22,%22auth%22:%7B%22user%22:%22APIKEY%22,%22password%22:%22%22%7D%7D"/> <input type="button" value="Clear" data-for="api_4" class="btn api-clear btn-clear" /></div></div></div>
+
+<h2 id="heading-count"><a name="heading-count">Count</a></h2><blockquote class="unformat">
+<h3 id="heading-curl-example-for-get-api-appc-loki-js-users-count"><a name="heading-curl-example-for-get-api-appc-loki-js-users-count">CURL Example for GET /api/appc.loki.js/users/count</a></h3><p>This is an example you can run from command line using curl:</p>
+
+</blockquote><pre class="highlight curl">curl -u APIKEY: "http://localhost:8080/api/appc.loki.js/users/count?limit=10&page=1&per_page=10"</pre><blockquote class="unformat">
+<h3 id="heading-titanium-mobile-example-for-get-api-appc-loki-js-users-count"><a name="heading-titanium-mobile-example-for-get-api-appc-loki-js-users-count">Titanium Mobile Example for GET /api/appc.loki.js/users/count</a></h3><p>This is an example you can use in your Titanium app:</p>
+
+</blockquote><pre class="highlight titanium"><span class="hljs-keyword">var</span> xhr = Ti.Network.createHTTPClient({
+    <span class="hljs-attr">onload</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onLoad</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Loaded: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    },
+    <span class="hljs-attr">onerror</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onError</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Errored: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    }
+});
+
+xhr.open(<span class="hljs-string">"GET"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/count?limit=10&amp;skip=0&amp;where=undefined&amp;order=undefined&amp;sel=undefined&amp;unsel=undefined&amp;page=1&amp;per_page=10"</span>);
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + Ti.Utils.base64encode(<span class="hljs-string">'APIKEY:'</span>);
+xhr.setRequestHeader(<span class="hljs-string">"Authorization"</span>, authstr);
+xhr.send();</pre><blockquote class="unformat">
+<h3 id="heading-node-js-example-for-get-api-appc-loki-js-users-count"><a name="heading-node-js-example-for-get-api-appc-loki-js-users-count">Node.js Example for GET /api/appc.loki.js/users/count</a></h3><p>This is an example you can use in your node app:</p>
+
+</blockquote><pre class="highlight node-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">"request"</span>);
+<span class="hljs-keyword">var</span> options = {
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/count?limit=10&amp;skip=0&amp;where=undefined&amp;order=undefined&amp;sel=undefined&amp;unsel=undefined&amp;page=1&amp;per_page=10"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"GET"</span>,
+  <span class="hljs-string">"bodyParams"</span>: {},
+  <span class="hljs-string">"auth"</span>: {
+    <span class="hljs-string">"user"</span>: <span class="hljs-string">"APIKEY"</span>,
+    <span class="hljs-string">"password"</span>: <span class="hljs-string">""</span>
+  },
+  <span class="hljs-string">"gzip"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"json"</span>: <span class="hljs-literal">true</span>
+};
+request(options, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, response, body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"success:"</span>, body.success, <span class="hljs-string">", id:"</span>, body.id);
+});</pre><blockquote class="unformat">
+<h3 id="heading-web-example-for-get-api-appc-loki-js-users-count"><a name="heading-web-example-for-get-api-appc-loki-js-users-count">Web Example for GET /api/appc.loki.js/users/count</a></h3><p>This is an example you can use in your web page:</p>
+
+</blockquote><pre class="highlight web"><span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();
+xhr.onreadystate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.readyState===<span class="hljs-number">4</span>) {
+        alert(<span class="hljs-keyword">this</span>.status+<span class="hljs-string">':'</span>+<span class="hljs-keyword">this</span>.responseText);
+    }
+};
+xhr.open(<span class="hljs-string">"GET"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/count?limit=10&amp;skip=0&amp;where=undefined&amp;order=undefined&amp;sel=undefined&amp;unsel=undefined&amp;page=1&amp;per_page=10"</span>);
+<span class="hljs-comment">//<span class="hljs-doctag">FIXME:</span> you need to fetch your APIKey but not store in code</span>
+<span class="hljs-comment">//It must be returned as a Base64 encoded value "apikey:"</span>
+<span class="hljs-comment">//Define as the APIKEY variable or set below</span>
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + APIKEY.replace(<span class="hljs-regexp">/[\r\n]+/gm</span>,<span class="hljs-string">''</span>);
+xhr.setRequestHeader(<span class="hljs-string">'Authorization'</span>, authstr);
+xhr.send();</pre><p>Count appc.loki.js/users</p>
+<h3 id="heading-http-request"><a name="heading-http-request">HTTP Request</a></h3><p>GET <a href="http://localhost:8080/api/appc.loki.js/users/count">http://localhost:8080/api/appc.loki.js/users/count</a></p>
+<h3 id="heading-query-parameters"><a name="heading-query-parameters">Query Parameters</a></h3><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit</td>
+<td>number</td>
+<td>false</td>
+<td>10</td>
+<td>The number of records to fetch. The value must be greater than 0, and no greater than 1000.</td>
+</tr>
+<tr>
+<td>skip</td>
+<td>number</td>
+<td>false</td>
+<td>N/A</td>
+<td>The number of records to skip. The value must not be less than 0.</td>
+</tr>
+<tr>
+<td>where</td>
+<td>object</td>
+<td>false</td>
+<td>N/A</td>
+<td>Constrains values for fields. The value should be encoded JSON.</td>
+</tr>
+<tr>
+<td>order</td>
+<td>object</td>
+<td>false</td>
+<td>N/A</td>
+<td>A dictionary of one or more fields specifying sorting of results. In general, you can sort based on any predefined field that you can query using the where operator, as well as on custom fields. The value should be encoded JSON.</td>
+</tr>
+<tr>
+<td>sel</td>
+<td>object</td>
+<td>false</td>
+<td>N/A</td>
+<td>Selects which fields to return from the query. Others are excluded. The value should be encoded JSON.</td>
+</tr>
+<tr>
+<td>unsel</td>
+<td>object</td>
+<td>false</td>
+<td>N/A</td>
+<td>Selects which fields to not return from the query. Others are included. The value should be encoded JSON.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>number</td>
+<td>false</td>
+<td>1</td>
+<td>Request page number starting from 1.</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>number</td>
+<td>false</td>
+<td>10</td>
+<td>Number of results per page.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="heading-http-response"><a name="heading-http-response">HTTP Response</a></h3><p><code>200 OK</code>: The count succeeded, and the results are available.<br><code>401 Unauthorized</code>: This request requires user authentication, as configured by the server.<br><code>404 Not Found</code>: No results were found.<br><code>500 Internal Server Error</code>: Something went wrong during the request; check out the logs on your server.<br><code>504 Gateway Timeout</code>: The request took too long to process, and the server timed it out.</p>
+<p><h3 class="api-test-heading">API Test</h3></p>
+<div class="panel panel-default api-panel"><div class="panel-body form-horizontal"><label for="api_5_limit" class="col-sm-2 text-left">limit</label><div class="col-sm-4"><input name="limit" id="api_5_limit" for-api="api_5" type="text" class="api form-control" /></div><label for="api_5_skip" class="col-sm-2 text-left">skip</label><div class="col-sm-4"><input name="skip" id="api_5_skip" for-api="api_5" type="text" class="api form-control" /></div><label for="api_5_where" class="col-sm-2 text-left">where</label><div class="col-sm-4"><input name="where" id="api_5_where" for-api="api_5" type="text" class="api form-control" /></div><label for="api_5_order" class="col-sm-2 text-left">order</label><div class="col-sm-4"><input name="order" id="api_5_order" for-api="api_5" type="text" class="api form-control" /></div><label for="api_5_sel" class="col-sm-2 text-left">sel</label><div class="col-sm-4"><input name="sel" id="api_5_sel" for-api="api_5" type="text" class="api form-control" /></div><label for="api_5_unsel" class="col-sm-2 text-left">unsel</label><div class="col-sm-4"><input name="unsel" id="api_5_unsel" for-api="api_5" type="text" class="api form-control" /></div><label for="api_5_page" class="col-sm-2 text-left">page</label><div class="col-sm-4"><input name="page" id="api_5_page" for-api="api_5" type="text" class="api form-control" /></div><label for="api_5_per_page" class="col-sm-2 text-left">per_page</label><div class="col-sm-4"><input name="per_page" id="api_5_per_page" for-api="api_5" type="text" class="api form-control" /></div><div class="col-sm-12"><input type="button" value="Find" data-loading-text="Finding..." id="api_5" class="api-button btn btn-primary" model="" opts="%7B%22url%22:%22http://localhost:8080/api/appc.loki.js/users/count%22,%22method%22:%22GET%22,%22pathParams%22:%7B%7D,%22queryParams%22:%7B%22limit%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22default%22:10,%22dataType%22:%22number%22,%22description%22:%22The%20number%20of%20records%20to%20fetch.%20The%20value%20must%20be%20greater%20than%200,%20and%20no%20greater%20than%201000.%22,%22name%22:%22limit%22%7D,%22skip%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22default%22:0,%22dataType%22:%22number%22,%22description%22:%22The%20number%20of%20records%20to%20skip.%20The%20value%20must%20not%20be%20less%20than%200.%22,%22name%22:%22skip%22%7D,%22where%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22dataType%22:%22object%22,%22description%22:%22Constrains%20values%20for%20fields.%20The%20value%20should%20be%20encoded%20JSON.%22,%22name%22:%22where%22%7D,%22order%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22dataType%22:%22object%22,%22description%22:%22A%20dictionary%20of%20one%20or%20more%20fields%20specifying%20sorting%20of%20results.%20In%20general,%20you%20can%20sort%20based%20on%20any%20predefined%20field%20that%20you%20can%20query%20using%20the%20where%20operator,%20as%20well%20as%20on%20custom%20fields.%20The%20value%20should%20be%20encoded%20JSON.%22,%22name%22:%22order%22%7D,%22sel%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22dataType%22:%22object%22,%22description%22:%22Selects%20which%20fields%20to%20return%20from%20the%20query.%20Others%20are%20excluded.%20The%20value%20should%20be%20encoded%20JSON.%22,%22name%22:%22sel%22%7D,%22unsel%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22dataType%22:%22object%22,%22description%22:%22Selects%20which%20fields%20to%20not%20return%20from%20the%20query.%20Others%20are%20included.%20The%20value%20should%20be%20encoded%20JSON.%22,%22name%22:%22unsel%22%7D,%22page%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22default%22:1,%22dataType%22:%22number%22,%22description%22:%22Request%20page%20number%20starting%20from%201.%22,%22name%22:%22page%22%7D,%22per_page%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22default%22:10,%22dataType%22:%22number%22,%22description%22:%22Number%20of%20results%20per%20page.%22,%22name%22:%22per_page%22%7D%7D,%22bodyParams%22:%7B%7D,%22templateurl%22:%22http://localhost:8080/api/appc.loki.js/users/count%22,%22auth%22:%7B%22user%22:%22APIKEY%22,%22password%22:%22%22%7D%7D"/> </div></div></div>
+
+<h2 id="heading-distinct"><a name="heading-distinct">Distinct</a></h2><blockquote class="unformat">
+<h3 id="heading-curl-example-for-get-api-appc-loki-js-users-distinct-field"><a name="heading-curl-example-for-get-api-appc-loki-js-users-distinct-field">CURL Example for GET /api/appc.loki.js/users/distinct/:field</a></h3><p>This is an example you can run from command line using curl:</p>
+
+</blockquote><pre class="highlight curl">curl -u APIKEY: "http://localhost:8080/api/appc.loki.js/users/distinct/FIELD?limit=10&page=1&per_page=10"</pre><blockquote class="unformat">
+<h3 id="heading-titanium-mobile-example-for-get-api-appc-loki-js-users-distinct-field"><a name="heading-titanium-mobile-example-for-get-api-appc-loki-js-users-distinct-field">Titanium Mobile Example for GET /api/appc.loki.js/users/distinct/:field</a></h3><p>This is an example you can use in your Titanium app:</p>
+
+</blockquote><pre class="highlight titanium"><span class="hljs-keyword">var</span> xhr = Ti.Network.createHTTPClient({
+    <span class="hljs-attr">onload</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onLoad</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Loaded: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    },
+    <span class="hljs-attr">onerror</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onError</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Errored: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    }
+});
+
+xhr.open(<span class="hljs-string">"GET"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/distinct/FIELD?limit=10&amp;skip=0&amp;where=undefined&amp;order=undefined&amp;sel=undefined&amp;unsel=undefined&amp;page=1&amp;per_page=10"</span>);
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + Ti.Utils.base64encode(<span class="hljs-string">'APIKEY:'</span>);
+xhr.setRequestHeader(<span class="hljs-string">"Authorization"</span>, authstr);
+xhr.send();</pre><blockquote class="unformat">
+<h3 id="heading-node-js-example-for-get-api-appc-loki-js-users-distinct-field"><a name="heading-node-js-example-for-get-api-appc-loki-js-users-distinct-field">Node.js Example for GET /api/appc.loki.js/users/distinct/:field</a></h3><p>This is an example you can use in your node app:</p>
+
+</blockquote><pre class="highlight node-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">"request"</span>);
+<span class="hljs-keyword">var</span> options = {
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/distinct/FIELD?limit=10&amp;skip=0&amp;where=undefined&amp;order=undefined&amp;sel=undefined&amp;unsel=undefined&amp;page=1&amp;per_page=10"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"GET"</span>,
+  <span class="hljs-string">"bodyParams"</span>: {},
+  <span class="hljs-string">"auth"</span>: {
+    <span class="hljs-string">"user"</span>: <span class="hljs-string">"APIKEY"</span>,
+    <span class="hljs-string">"password"</span>: <span class="hljs-string">""</span>
+  },
+  <span class="hljs-string">"gzip"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"json"</span>: <span class="hljs-literal">true</span>
+};
+request(options, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, response, body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"success:"</span>, body.success, <span class="hljs-string">", id:"</span>, body.id);
+});</pre><blockquote class="unformat">
+<h3 id="heading-web-example-for-get-api-appc-loki-js-users-distinct-field"><a name="heading-web-example-for-get-api-appc-loki-js-users-distinct-field">Web Example for GET /api/appc.loki.js/users/distinct/:field</a></h3><p>This is an example you can use in your web page:</p>
+
+</blockquote><pre class="highlight web"><span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();
+xhr.onreadystate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.readyState===<span class="hljs-number">4</span>) {
+        alert(<span class="hljs-keyword">this</span>.status+<span class="hljs-string">':'</span>+<span class="hljs-keyword">this</span>.responseText);
+    }
+};
+xhr.open(<span class="hljs-string">"GET"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/distinct/FIELD?limit=10&amp;skip=0&amp;where=undefined&amp;order=undefined&amp;sel=undefined&amp;unsel=undefined&amp;page=1&amp;per_page=10"</span>);
+<span class="hljs-comment">//<span class="hljs-doctag">FIXME:</span> you need to fetch your APIKey but not store in code</span>
+<span class="hljs-comment">//It must be returned as a Base64 encoded value "apikey:"</span>
+<span class="hljs-comment">//Define as the APIKEY variable or set below</span>
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + APIKEY.replace(<span class="hljs-regexp">/[\r\n]+/gm</span>,<span class="hljs-string">''</span>);
+xhr.setRequestHeader(<span class="hljs-string">'Authorization'</span>, authstr);
+xhr.send();</pre><p>Find distinct appc.loki.js/users</p>
+<h3 id="heading-http-request"><a name="heading-http-request">HTTP Request</a></h3><p>GET <a href="http://localhost:8080/api/appc.loki.js/users/distinct/:field">http://localhost:8080/api/appc.loki.js/users/distinct/:field</a></p>
+<h3 id="heading-path-parameters"><a name="heading-path-parameters">Path Parameters</a></h3><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td>string</td>
+<td>true</td>
+<td>N/A</td>
+<td>The field name that must be distinct.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="heading-query-parameters"><a name="heading-query-parameters">Query Parameters</a></h3><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit</td>
+<td>number</td>
+<td>false</td>
+<td>10</td>
+<td>The number of records to fetch. The value must be greater than 0, and no greater than 1000.</td>
+</tr>
+<tr>
+<td>skip</td>
+<td>number</td>
+<td>false</td>
+<td>N/A</td>
+<td>The number of records to skip. The value must not be less than 0.</td>
+</tr>
+<tr>
+<td>where</td>
+<td>object</td>
+<td>false</td>
+<td>N/A</td>
+<td>Constrains values for fields. The value should be encoded JSON.</td>
+</tr>
+<tr>
+<td>order</td>
+<td>object</td>
+<td>false</td>
+<td>N/A</td>
+<td>A dictionary of one or more fields specifying sorting of results. In general, you can sort based on any predefined field that you can query using the where operator, as well as on custom fields. The value should be encoded JSON.</td>
+</tr>
+<tr>
+<td>sel</td>
+<td>object</td>
+<td>false</td>
+<td>N/A</td>
+<td>Selects which fields to return from the query. Others are excluded. The value should be encoded JSON.</td>
+</tr>
+<tr>
+<td>unsel</td>
+<td>object</td>
+<td>false</td>
+<td>N/A</td>
+<td>Selects which fields to not return from the query. Others are included. The value should be encoded JSON.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>number</td>
+<td>false</td>
+<td>1</td>
+<td>Request page number starting from 1.</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>number</td>
+<td>false</td>
+<td>10</td>
+<td>Number of results per page.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="heading-http-response"><a name="heading-http-response">HTTP Response</a></h3><p><code>200 OK</code>: Distinct fields response.<br><code>401 Unauthorized</code>: This request requires user authentication, as configured by the server.<br><code>404 Not Found</code>: No results were found.<br><code>500 Internal Server Error</code>: Something went wrong during the request; check out the logs on your server.<br><code>504 Gateway Timeout</code>: The request took too long to process, and the server timed it out.</p>
+<p><h3 class="api-test-heading">API Test</h3></p>
+<div class="panel panel-default api-panel"><div class="panel-body form-horizontal"><label for="api_6_field" class="col-sm-2 text-left">field</label><div class="col-sm-4"><input name="field" id="api_6_field" for-api="api_6" type="text" class="api form-control" /></div><label for="api_6_limit" class="col-sm-2 text-left">limit</label><div class="col-sm-4"><input name="limit" id="api_6_limit" for-api="api_6" type="text" class="api form-control" /></div><label for="api_6_skip" class="col-sm-2 text-left">skip</label><div class="col-sm-4"><input name="skip" id="api_6_skip" for-api="api_6" type="text" class="api form-control" /></div><label for="api_6_where" class="col-sm-2 text-left">where</label><div class="col-sm-4"><input name="where" id="api_6_where" for-api="api_6" type="text" class="api form-control" /></div><label for="api_6_order" class="col-sm-2 text-left">order</label><div class="col-sm-4"><input name="order" id="api_6_order" for-api="api_6" type="text" class="api form-control" /></div><label for="api_6_sel" class="col-sm-2 text-left">sel</label><div class="col-sm-4"><input name="sel" id="api_6_sel" for-api="api_6" type="text" class="api form-control" /></div><label for="api_6_unsel" class="col-sm-2 text-left">unsel</label><div class="col-sm-4"><input name="unsel" id="api_6_unsel" for-api="api_6" type="text" class="api form-control" /></div><label for="api_6_page" class="col-sm-2 text-left">page</label><div class="col-sm-4"><input name="page" id="api_6_page" for-api="api_6" type="text" class="api form-control" /></div><label for="api_6_per_page" class="col-sm-2 text-left">per_page</label><div class="col-sm-4"><input name="per_page" id="api_6_per_page" for-api="api_6" type="text" class="api form-control" /></div><div class="col-sm-12"><input type="button" value="Find" data-loading-text="Finding..." id="api_6" class="api-button btn btn-primary" model="" opts="%7B%22url%22:%22http://localhost:8080/api/appc.loki.js/users/distinct/:field%22,%22method%22:%22GET%22,%22pathParams%22:%7B%22field%22:%7B%22type%22:%22path%22,%22optional%22:false,%22required%22:true,%22dataType%22:%22string%22,%22description%22:%22The%20field%20name%20that%20must%20be%20distinct.%22,%22name%22:%22field%22%7D%7D,%22queryParams%22:%7B%22limit%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22default%22:10,%22dataType%22:%22number%22,%22description%22:%22The%20number%20of%20records%20to%20fetch.%20The%20value%20must%20be%20greater%20than%200,%20and%20no%20greater%20than%201000.%22,%22name%22:%22limit%22%7D,%22skip%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22default%22:0,%22dataType%22:%22number%22,%22description%22:%22The%20number%20of%20records%20to%20skip.%20The%20value%20must%20not%20be%20less%20than%200.%22,%22name%22:%22skip%22%7D,%22where%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22dataType%22:%22object%22,%22description%22:%22Constrains%20values%20for%20fields.%20The%20value%20should%20be%20encoded%20JSON.%22,%22name%22:%22where%22%7D,%22order%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22dataType%22:%22object%22,%22description%22:%22A%20dictionary%20of%20one%20or%20more%20fields%20specifying%20sorting%20of%20results.%20In%20general,%20you%20can%20sort%20based%20on%20any%20predefined%20field%20that%20you%20can%20query%20using%20the%20where%20operator,%20as%20well%20as%20on%20custom%20fields.%20The%20value%20should%20be%20encoded%20JSON.%22,%22name%22:%22order%22%7D,%22sel%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22dataType%22:%22object%22,%22description%22:%22Selects%20which%20fields%20to%20return%20from%20the%20query.%20Others%20are%20excluded.%20The%20value%20should%20be%20encoded%20JSON.%22,%22name%22:%22sel%22%7D,%22unsel%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22dataType%22:%22object%22,%22description%22:%22Selects%20which%20fields%20to%20not%20return%20from%20the%20query.%20Others%20are%20included.%20The%20value%20should%20be%20encoded%20JSON.%22,%22name%22:%22unsel%22%7D,%22page%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22default%22:1,%22dataType%22:%22number%22,%22description%22:%22Request%20page%20number%20starting%20from%201.%22,%22name%22:%22page%22%7D,%22per_page%22:%7B%22type%22:%22query%22,%22optional%22:true,%22required%22:false,%22default%22:10,%22dataType%22:%22number%22,%22description%22:%22Number%20of%20results%20per%20page.%22,%22name%22:%22per_page%22%7D%7D,%22bodyParams%22:%7B%7D,%22templateurl%22:%22http://localhost:8080/api/appc.loki.js/users/distinct/:field%22,%22auth%22:%7B%22user%22:%22APIKEY%22,%22password%22:%22%22%7D%7D"/> </div></div></div>
+
+<h2 id="heading-delete-one"><a name="heading-delete-one">Delete One</a></h2><blockquote class="unformat">
+<h3 id="heading-curl-example-for-delete-api-appc-loki-js-users-id"><a name="heading-curl-example-for-delete-api-appc-loki-js-users-id">CURL Example for DELETE /api/appc.loki.js/users/:id</a></h3><p>This is an example you can run from command line using curl:</p>
+
+</blockquote><pre class="highlight curl">curl -is -X DELETE -u APIKEY: "http://localhost:8080/api/appc.loki.js/users/ID"</pre><blockquote class="unformat">
+<h3 id="heading-titanium-mobile-example-for-delete-api-appc-loki-js-users-id"><a name="heading-titanium-mobile-example-for-delete-api-appc-loki-js-users-id">Titanium Mobile Example for DELETE /api/appc.loki.js/users/:id</a></h3><p>This is an example you can use in your Titanium app:</p>
+
+</blockquote><pre class="highlight titanium"><span class="hljs-keyword">var</span> xhr = Ti.Network.createHTTPClient({
+    <span class="hljs-attr">onload</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onLoad</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Loaded: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    },
+    <span class="hljs-attr">onerror</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onError</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Errored: "</span> + <span class="hljs-keyword">this</span>.status + <span class="hljs-string">": "</span> + <span class="hljs-keyword">this</span>.responseText);
+    }
+});
+
+xhr.open(<span class="hljs-string">"DELETE"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/ID"</span>);
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + Ti.Utils.base64encode(<span class="hljs-string">'APIKEY:'</span>);
+xhr.setRequestHeader(<span class="hljs-string">"Authorization"</span>, authstr);
+xhr.send();</pre><blockquote class="unformat">
+<h3 id="heading-node-js-example-for-delete-api-appc-loki-js-users-id"><a name="heading-node-js-example-for-delete-api-appc-loki-js-users-id">Node.js Example for DELETE /api/appc.loki.js/users/:id</a></h3><p>This is an example you can use in your node app:</p>
+
+</blockquote><pre class="highlight node-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">"request"</span>);
+<span class="hljs-keyword">var</span> options = {
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/ID"</span>,
+  <span class="hljs-string">"method"</span>: <span class="hljs-string">"DELETE"</span>,
+  <span class="hljs-string">"bodyParams"</span>: {},
+  <span class="hljs-string">"auth"</span>: {
+    <span class="hljs-string">"user"</span>: <span class="hljs-string">"APIKEY"</span>,
+    <span class="hljs-string">"password"</span>: <span class="hljs-string">""</span>
+  },
+  <span class="hljs-string">"gzip"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"json"</span>: <span class="hljs-literal">true</span>
+};
+request(options, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, response, body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"success:"</span>, body.success, <span class="hljs-string">", id:"</span>, body.id);
+});</pre><blockquote class="unformat">
+<h3 id="heading-web-example-for-delete-api-appc-loki-js-users-id"><a name="heading-web-example-for-delete-api-appc-loki-js-users-id">Web Example for DELETE /api/appc.loki.js/users/:id</a></h3><p>This is an example you can use in your web page:</p>
+
+</blockquote><pre class="highlight web"><span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();
+xhr.onreadystate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.readyState===<span class="hljs-number">4</span>) {
+        alert(<span class="hljs-keyword">this</span>.status+<span class="hljs-string">':'</span>+<span class="hljs-keyword">this</span>.responseText);
+    }
+};
+xhr.open(<span class="hljs-string">"DELETE"</span>,<span class="hljs-string">"http://localhost:8080/api/appc.loki.js/users/ID"</span>);
+<span class="hljs-comment">//<span class="hljs-doctag">FIXME:</span> you need to fetch your APIKey but not store in code</span>
+<span class="hljs-comment">//It must be returned as a Base64 encoded value "apikey:"</span>
+<span class="hljs-comment">//Define as the APIKEY variable or set below</span>
+<span class="hljs-keyword">var</span> authstr = <span class="hljs-string">'Basic '</span> + APIKEY.replace(<span class="hljs-regexp">/[\r\n]+/gm</span>,<span class="hljs-string">''</span>);
+xhr.setRequestHeader(<span class="hljs-string">'Authorization'</span>, authstr);
+xhr.send();</pre><p>Delete a specific appc.loki.js/user</p>
+<h3 id="heading-http-request"><a name="heading-http-request">HTTP Request</a></h3><p>DELETE <a href="http://localhost:8080/api/appc.loki.js/users/:id">http://localhost:8080/api/appc.loki.js/users/:id</a></p>
+<h3 id="heading-path-parameters"><a name="heading-path-parameters">Path Parameters</a></h3><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>N/A</td>
+<td>The appc.loki.js/user ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="heading-http-response"><a name="heading-http-response">HTTP Response</a></h3><p><code>204 No Content</code>: The delete succeeded.<br><code>401 Unauthorized</code>: This request requires user authentication, as configured by the server.<br><code>404 Not Found</code>: No results were found.<br><code>500 Internal Server Error</code>: Something went wrong during the request; check out the logs on your server.<br><code>504 Gateway Timeout</code>: The request took too long to process, and the server timed it out.</p>
+<p><h3 class="api-test-heading">API Test</h3></p>
+<div class="panel panel-default api-panel"><div class="panel-body form-horizontal"><label for="api_7_id" class="col-sm-2 text-left">id</label><div class="col-sm-4"><input name="id" id="api_7_id" for-api="api_7" type="text" class="api form-control" /></div><label for="api_7_body" class="col-sm-12 text-left">body</label><div class="col-sm-12"><input name="body" replace-with-textarea="true" type="textarea" for-api="api_7" class="api form-control" /></div><div class="col-sm-12"><input type="button" value="Delete" data-loading-text="Deleting..." id="api_7" class="api-button btn btn-primary" model="" opts="%7B%22url%22:%22http://localhost:8080/api/appc.loki.js/users/:id%22,%22method%22:%22DELETE%22,%22pathParams%22:%7B%22id%22:%7B%22description%22:%22The%20appc.loki.js/user%20ID%22,%22optional%22:false,%22required%22:true,%22type%22:%22path%22,%22dataType%22:%22string%22,%22name%22:%22id%22%7D%7D,%22queryParams%22:%7B%7D,%22bodyParams%22:%7B%7D,%22templateurl%22:%22http://localhost:8080/api/appc.loki.js/users/:id%22,%22auth%22:%7B%22user%22:%22APIKEY%22,%22password%22:%22%22%7D%7D"/> </div></div></div>
+
+
