@@ -37,9 +37,25 @@ describe('Query', () => {
         should(_loki.$eq).be.equal(_query.$eq.$loki);
         next();
     });
-    
+
     it('should return count of collections', (next) => {
         should(query.count()).be.equal(0);
         next();
+    });
+});
+
+describe('Connector query', () => {
+
+    it("should query for objects", (next) => {
+        const _model = Arrow.Model.getModel('appc.loki.js/users');
+        var options = {
+            where: { age: { $gt: 20 } }
+        };
+        _model.query(options, (err, resp) => {
+            should(err).not.be.ok;
+            should(resp).be.ok;
+            should(resp).be.Array;
+            next();
+        });
     });
 });

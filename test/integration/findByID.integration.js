@@ -30,6 +30,10 @@ describe('FindByID Api tests', () => {
         next();
     });
 
+    after(function () {
+		urlToHit = 'http://localhost:' + server.port + `/api/appc.loki.js/users/`;
+	});
+
     it("should find object by ID", (next, id = 1) => {
         let options = {
             "url": urlToHit + id,
