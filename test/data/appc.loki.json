@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "filename": "/Users/viktorchobanov/work/new/appc.loki.js/test/data/appc.loki.json",
+=======
+  "filename": "/Users/tpopov/Work/appc.loki.js/test/data/appc.loki.json",
+>>>>>>> a203653002fb67533661748ebe7ca5d4f47cecdf
   "collections": [
     {
       "name": "users",
@@ -67,7 +71,11 @@
       "disableChangesApi": true,
       "autoupdate": false,
       "ttl": null,
+<<<<<<< HEAD
       "maxId": 182,
+=======
+      "maxId": 73,
+>>>>>>> a203653002fb67533661748ebe7ca5d4f47cecdf
       "DynamicViews": [],
       "events": {
         "insert": [
