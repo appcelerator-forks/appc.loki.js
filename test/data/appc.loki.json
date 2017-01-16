@@ -67,7 +67,7 @@
       "disableChangesApi": true,
       "autoupdate": false,
       "ttl": null,
-      "maxId": 11,
+      "maxId": 182,
       "DynamicViews": [],
       "events": {
         "insert": [
@@ -100,22 +100,6 @@
     "autoload": true,
     "serializationMethod": "pretty",
     "destructureDelimiter": "$<\n"
-  },
-  "persistenceMethod": "fs",
-  "persistenceAdapter": null,
-  "verbose": false,
-  "events": {
-    "init": [
-      null
-    ],
-    "loaded": [],
-    "flushChanges": [],
-    "close": [],
-    "changes": [],
-    "warning": []
-  },
-  "ENV": "NODEJS"
-}eDelimiter": "$<\n"
   },
   "persistenceMethod": "fs",
   "persistenceAdapter": null,
