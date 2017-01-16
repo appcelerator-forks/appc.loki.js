@@ -9,6 +9,12 @@
     "appcelerator",
     "arrow"
   ],
+  "contributors": [
+    "mlukanova",
+    "tpopov94",
+    "emilrr",
+    "vik10101"
+  ],
   "repository": {},
   "private": true,
   "dependencies": {
