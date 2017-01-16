@@ -1,64 +1,64 @@
-// /* global init, assertFailure, dump, state */
+/* global init, assertFailure, dump, state */
 
-// 'use strict';
+'use strict';
 
-// require('../_init');
+require('../_init');
 
-// var should = require('should'),
-//     _ = require('underscore'),
-//     Arrow = require('Arrow'),
-//     request = require('request');
+var should = require('should'),
+    _ = require('underscore'),
+    Arrow = require('Arrow'),
+    request = require('request');
 
-// describe('Distinct Api tests', () => {
-//     var self = this;
-//     init(self);
+describe('Distinct Api tests', () => {
+    var self = this;
+    init(self);
 
-//     var auth,
-//         connector,
-//         server,
-//         urlToHit;
+    var auth,
+        connector,
+        server,
+        urlToHit;
 
-//     before(function (next) {
-//         auth = {
-//             user: this.server.config.apikey,
-//             password: ''
-//         };
-//         connector = this.connector;
-//         connector.config.requireSessionLogin = true;
-//         server = new Arrow();
-//         urlToHit = 'http://localhost:' + server.port + `/api/appc.loki.js/users/distinct/`;
-//         next();
-//     });
+    before(function (next) {
+        auth = {
+            user: this.server.config.apikey,
+            password: ''
+        };
+        connector = this.connector;
+        connector.config.requireSessionLogin = true;
+        server = new Arrow();
+        urlToHit = 'http://localhost:' + server.port + `/api/appc.loki.js/users/distinct/`;
+        next();
+    });
 
-//     it("should return objects by distinct name", (next, field = "name") => {
-//         let options = {
-//             "url": urlToHit + field,
-//             "method": "GET",
-//             "auth": auth,
-//             "json": true
-//         };
+    it("should return objects by distinct name", (next, field = "name") => {
+        let options = {
+            "url": urlToHit + field,
+            "method": "GET",
+            "auth": auth,
+            "json": true
+        };
 
-//         request(options, function (err, response, body) {
-//             should(body.success).be.true();
-//             should(response.statusCode).be.equal(200);
-//             should(body.users.length).be.equal(2);
-//         });
-//         next();
-//     });
+        request(options, function (err, response, body) {
+            should(body.success).be.true();
+            should(response.statusCode).be.equal(200);
+            should(body.users.length).be.equal(2);
+        });
+        next();
+    });
 
-//     it("should return objects by distinct age", (next, field = "Age") => {
-//         let options = {
-//             "url": urlToHit + field,
-//             "method": "GET",
-//             "auth": auth,
-//             "json": true
-//         };
+    it("should return objects by distinct age", (next, field = "Age") => {
+        let options = {
+            "url": urlToHit + field,
+            "method": "GET",
+            "auth": auth,
+            "json": true
+        };
 
-//         request(options, function (err, response, body) {
-//             should(body.success).be.true();
-//             should(response.statusCode).be.equal(200);
-//             should(body.users.length).be.equal(3);
-//         });
-//         next();
-//     });
-// });
+        request(options, function (err, response, body) {
+            should(body.success).be.true();
+            should(response.statusCode).be.equal(200);
+            should(body.users.length).be.equal(3);
+        });
+        next();
+    });
+});
