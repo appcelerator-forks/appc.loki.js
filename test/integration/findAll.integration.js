@@ -42,8 +42,8 @@ describe('FindAll Api tests', () => {
             should(body.success).be.true();
             should(err).be.not.ok;
             should(response.statusCode).be.equal(200);
+            next();
         });
-        next();
     });
 
     it("should return data in proper format", (next) => {
@@ -66,8 +66,8 @@ describe('FindAll Api tests', () => {
 
                 should(resProperties).be.eql(expectedProperties);
             }, this);
+            next();
         });
-        next();
     });
 
     it("should return 404 if invalid request is made", (next) => {
@@ -80,8 +80,8 @@ describe('FindAll Api tests', () => {
         request(options, function (err, response, body) {
             should(body.success).be.false();
             should(response.statusCode).be.equal(404);
+            next();
         });
-        next();
     });
 
 });

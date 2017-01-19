@@ -42,8 +42,9 @@ describe('Distinct Api tests', () => {
             should(body.success).be.true();
             should(response.statusCode).be.equal(200);
             should(body.users.length).be.equal(2);
+
+            next();
         });
-        next();
     });
 
     it("should return objects by distinct age", (next, field = "Age") => {
@@ -58,7 +59,8 @@ describe('Distinct Api tests', () => {
             should(body.success).be.true();
             should(response.statusCode).be.equal(200);
             should(body.users.length).be.equal(3);
+            
+            next();
         });
-        next();
     });
 });
