@@ -67,7 +67,7 @@
       "disableChangesApi": true,
       "autoupdate": false,
       "ttl": null,
-      "maxId": 27,
+      "maxId": 42,
       "DynamicViews": [],
       "events": {
         "insert": [
