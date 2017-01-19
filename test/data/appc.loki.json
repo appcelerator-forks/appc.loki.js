@@ -55,7 +55,7 @@
       "uniqueNames": [],
       "transforms": {},
       "objType": "users",
-      "dirty": false,
+      "dirty": true,
       "cachedIndex": null,
       "cachedBinaryIndex": null,
       "cachedData": null,
@@ -67,7 +67,7 @@
       "disableChangesApi": true,
       "autoupdate": false,
       "ttl": null,
-      "maxId": 12,
+      "maxId": 27,
       "DynamicViews": [],
       "events": {
         "insert": [
