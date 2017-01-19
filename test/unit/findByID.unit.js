@@ -26,6 +26,7 @@ describe('Connector findByID', () => {
             let _resData = ['Age', 'name', 'weapons'];
             should(err).not.be.ok;
             should(resultModel).be.ok;
+            resultModel = resultModel.toPayload();
             _resData.forEach((item) => {
                 should(resultModel.hasOwnProperty(item)).be.true("Expected '" + item + "' to be a part of this list!");
             });

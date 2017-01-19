@@ -1,5 +1,5 @@
 {
-  "filename": "/Users/tpopov/Work/appc.loki.js/data/appc.loki.json",
+  "filename": "C:\\Users\\eruzhenov\\Work\\appc.loki.js\\test\\data\\appc.loki.json",
   "collections": [
     {
       "name": "users",
@@ -9,7 +9,7 @@
           "weapons": [
             "Molmir"
           ],
-          "Age": 31,
+          "Age": 32,
           "meta": {
             "revision": 2,
             "created": 1481039112667,
@@ -29,18 +29,33 @@
             "updated": 1481740562150
           },
           "$loki": 5
+        },
+        {
+          "name": "Gunar Bersaki",
+          "weapons": [
+            "sword"
+          ],
+          "Age": 14,
+          "meta": {
+            "revision": 1,
+            "created": 1481739737261,
+            "version": 0,
+            "updated": 1481740562160
+          },
+          "$loki": 6
         }
       ],
       "idIndex": [
         1,
-        5
+        5,
+        6
       ],
       "binaryIndices": {},
       "constraints": null,
       "uniqueNames": [],
       "transforms": {},
       "objType": "users",
-      "dirty": true,
+      "dirty": false,
       "cachedIndex": null,
       "cachedBinaryIndex": null,
       "cachedData": null,
@@ -52,7 +67,7 @@
       "disableChangesApi": true,
       "autoupdate": false,
       "ttl": null,
-      "maxId": 8,
+      "maxId": 9,
       "DynamicViews": [],
       "events": {
         "insert": [
