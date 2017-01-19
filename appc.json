@@ -1,6 +1,15 @@
 {
-	"type":"connector",
-	"group":"arrow",
-	"dependencies": {
-	}
+	"type": "connector",
+	"group": "arrow",
+	"owners": [
+		"mlukanova@axway.com",
+		"tpopov@axway.com",
+		"eruzhenov@axway.com",
+		"vchobanov@axway.com",
+		"mvasilev@axway.com"
+	],
+	"assets": {
+		"small_logo": "docs/lokijs.png"
+	},
+	"dependencies": {}
 }

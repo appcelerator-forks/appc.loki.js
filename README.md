@@ -75,4 +75,3 @@ To test the connector, just run
 ```sh
 npm test
 ```
->>>>>>> a203653002fb67533661748ebe7ca5d4f47cecdf
