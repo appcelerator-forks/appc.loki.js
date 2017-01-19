@@ -31,8 +31,8 @@ describe('FindByID Api tests', () => {
     });
 
     after(function () {
-		urlToHit = 'http://localhost:' + server.port + `/api/appc.loki.js/users/`;
-	});
+        urlToHit = 'http://localhost:' + server.port + `/api/appc.loki.js/users/`;
+    });
 
     it("should find object by ID", (next, id = 1) => {
         let options = {
@@ -51,10 +51,10 @@ describe('FindByID Api tests', () => {
             should(response.statusCode).be.equal(200);
 
             expectedData.forEach((item) => {
-               should(resData.hasOwnProperty(item)).be.true("Expected '" + item + "' to be a part of this list!");
+                should(resData.hasOwnProperty(item)).be.true("Expected '" + item + "' to be a part of this list!");
             });
+            next();
         });
-        next();
     });
 
     it("should NOT return data with invalid ID", (next, id = 27) => {
@@ -73,7 +73,7 @@ describe('FindByID Api tests', () => {
             should(err).be.not.ok;
             // Response data should be an empty array when invalid ID is passed
             should(_.isEmpty(body.user)).be.true();
+            next();
         });
-        next();
     });
 });
