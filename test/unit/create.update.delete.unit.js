@@ -1,4 +1,4 @@
-/* global init, assertFailure, dump, state */
+// /* global init, assertFailure, dump, state */
 'use strict';
 
 require('../_init');
@@ -13,7 +13,7 @@ describe('Connector CREATE and UPDATE', () => {
     var newObject;
 
     it("should be able to create objects", (next) => {
-        
+
         const _model = Arrow.Model.getModel('appc.loki.js/users');
         const newModel = {
             name: 'Fiodor Zaiuchuk',
@@ -55,3 +55,4 @@ describe('Connector CREATE and UPDATE', () => {
         });
     });
 });
+

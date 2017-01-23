@@ -21,7 +21,7 @@
         {
           "name": "Gunar Bersaki",
           "weapons": "[\"BFG\", \"Rocket Launcher\"]",
-          "Age": "45",
+          "Age": 45,
           "meta": {
             "revision": 1,
             "created": 1481739737259,
@@ -55,7 +55,7 @@
       "uniqueNames": [],
       "transforms": {},
       "objType": "users",
-      "dirty": false,
+      "dirty": true,
       "cachedIndex": null,
       "cachedBinaryIndex": null,
       "cachedData": null,
@@ -67,7 +67,7 @@
       "disableChangesApi": true,
       "autoupdate": false,
       "ttl": null,
-      "maxId": 269,
+      "maxId": 102,
       "DynamicViews": [],
       "events": {
         "insert": [

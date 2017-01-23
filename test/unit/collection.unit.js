@@ -25,7 +25,7 @@ describe('Collection', () => {
         next();
     });
 
-    it('should return true for exists collection', (next) => {
+    it('should check for existing collection', (next) => {
         should(collection.exists()).be.ok();
         should(collection.exists()).be.equal(true);
         next();

@@ -42,8 +42,8 @@ describe('Query Api tests', () => {
             should(body.success).be.true();
             should(err).be.not.ok;
             should(response.statusCode).be.equal(200);
+            next();
         });
-        next();
     });
 
     it("should return every object with valid name based on query params", (next) => {
@@ -60,11 +60,11 @@ describe('Query Api tests', () => {
             should(body.success).be.true();
             should(response.statusCode).be.equal(200);
 
-             users.forEach(function (user) {
+            users.forEach(function (user) {
                 should(user.name.includes("Gunar")).be.true();
             }, this);
+            next();
         });
-        next();
     });
 
     it("should return proper response based on query parameters", (next) => {
@@ -87,8 +87,8 @@ describe('Query Api tests', () => {
                 should(user.name.indexOf("G") > -1).be.true();
                 should(user.Age > 30).be.true();
             }, this);
+            next();
         });
-        next();
     });
 
     it("should not work with unsupported query commands", (next) => {
@@ -106,8 +106,8 @@ describe('Query Api tests', () => {
             should(body.message).be.equal("Unsupported command: \'" + msg[1] + "\'!");
             should(body.success).be.false();
             should(response.statusCode).be.equal(500);
+            next();
         });
-        next();
     });
 
     it("should not allow you to request endpoint if not authorised", (next) => {
@@ -123,7 +123,7 @@ describe('Query Api tests', () => {
             should(body.success).be.false();
             should(body.message).be.equal('Unauthorized');
             should(response.statusCode).be.equal(401);
+            next();
         });
-        next();
     });
 });

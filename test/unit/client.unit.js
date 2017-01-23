@@ -16,7 +16,7 @@ describe('Client', () => {
         loki.connect(next);
     });
 
-    it('should be able to create an object', (next) => {
+    it('should be able to create a new configuration', (next) => {
         should(connector.config.db).equal('appc.loki.json');
         should(connector.loki).be.ok();
         next();

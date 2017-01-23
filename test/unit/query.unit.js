@@ -49,7 +49,7 @@ describe('Connector query', () => {
     it("should query for objects", (next) => {
         const _model = Arrow.Model.getModel('appc.loki.js/users');
         var options = {
-            where: { age: { $gt: 20 } }
+            where: {'$gt' : { Age : 20 } }
         };
         _model.query(options, (err, resp) => {
             should(err).not.be.ok;
@@ -62,7 +62,7 @@ describe('Connector query', () => {
     it("should query for an object", (next) => {
         const _model = Arrow.Model.getModel('appc.loki.js/users');
         var options = {
-            where: { age: { $eq: 32 } }
+            where: {'$eq' : { Age : 32 } }
         };
         _model.query(options, (err, resp) => {
             should(err).not.be.ok;
@@ -73,10 +73,10 @@ describe('Connector query', () => {
         });
     });
 
-    it("should query for not existing object", (next) => {
+    it("should query for none existing object", (next) => {
         const _model = Arrow.Model.getModel('appc.loki.js/users');
         var options = {
-            where: { age: { $gt: 80 } }
+            where: {'$gt' : { Age : 80 } }
         };
         _model.query(options, (err, resp) => {
             should(err).not.be.ok;
