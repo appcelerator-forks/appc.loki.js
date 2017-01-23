@@ -1,5 +1,5 @@
 {
-  "filename": "/Users/viktorchobanov/work/new/appc.loki.js/test/data/appc.loki.json",
+  "filename": "/Users/marinvasilev/Projects/appcelerator/appc.lokijs/test/data/appc.loki.json",
   "collections": [
     {
       "name": "users",
@@ -55,7 +55,7 @@
       "uniqueNames": [],
       "transforms": {},
       "objType": "users",
-      "dirty": true,
+      "dirty": false,
       "cachedIndex": null,
       "cachedBinaryIndex": null,
       "cachedData": null,
@@ -67,7 +67,7 @@
       "disableChangesApi": true,
       "autoupdate": false,
       "ttl": null,
-      "maxId": 102,
+      "maxId": 106,
       "DynamicViews": [],
       "events": {
         "insert": [
