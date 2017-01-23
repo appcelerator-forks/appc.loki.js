@@ -10,6 +10,7 @@ var should = require('should'),
 describe('Connector CREATE and UPDATE', () => {
     var self = this;
     var __instance;
+    var newObject;
 
     it("should be able to create objects", (next) => {
         
@@ -20,36 +21,37 @@ describe('Connector CREATE and UPDATE', () => {
             Age: "44"
         };
         let __model = Arrow.Model.getModel('appc.loki.js/users');
-        //create a new model
+    
         __model.create(newModel, (_error, _instance) => {
-            __instance = _instance.toPayload();
-
             should(_error).be.not.ok;
-            should(__instance).be.ok;
-            // should(_instance.getPrimaryKey()).be.a.String;
-            //Delete existing record
-            const _model = Arrow.Model.getModel('appc.loki.js/users');
-            // _model.delete(__instance, (err, resp) => {
-            //     should(err).not.be.ok;
-            //     _model.findByID(__instance.getPrimaryKey(), (err, resp) => {
-            //         should(err).be.ok;
-            //         next();
-            //     });
-            // });
+            should(_instance).be.ok;
             __instance = _instance;
             next();
         });
     });
 
-    it(" ", (next) => {
+    it("should be able to update objects", (next) => {
+        const _model = Arrow.Model.getModel('appc.loki.js/users');
+        
+        newObject = {
+            name: 'John Doe',
+            Age: "42"
+        };
+
+        var instance = _model.instance(newObject);
+
+        _model.save(instance, (err, resp) => {
+            should(err).not.be.ok;
+            should(resp).be.ok;
+            next();
+        });
+    });
+
+    it("should be able to delete objects", (next) => {
         const _model = Arrow.Model.getModel('appc.loki.js/users');
         _model.delete(__instance, (err, resp) => {
             should(err).not.be.ok;
-            _model.findByID(resp.getPrimaryKey(), (err, resp) => {
-                should(err).be.ok;
-                next();
-                });
-            });
+            next();
+        });
     });
-
 });

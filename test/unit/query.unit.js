@@ -58,4 +58,32 @@ describe('Connector query', () => {
             next();
         });
     });
+
+    it("should query for an object", (next) => {
+        const _model = Arrow.Model.getModel('appc.loki.js/users');
+        var options = {
+            where: { age: { $eq: 32 } }
+        };
+        _model.query(options, (err, resp) => {
+            should(err).not.be.ok;
+            should(resp).be.ok;
+            should(resp).be.Array;
+            should(resp).have.lengthOf(1);
+            next();
+        });
+    });
+
+    it("should query for not existing object", (next) => {
+        const _model = Arrow.Model.getModel('appc.loki.js/users');
+        var options = {
+            where: { age: { $gt: 80 } }
+        };
+        _model.query(options, (err, resp) => {
+            should(err).not.be.ok;
+            should(resp).be.ok;
+            should(resp).be.Array;
+            should(resp).have.lengthOf(0);
+            next();
+        });
+    });
 });
