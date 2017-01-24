@@ -1,4 +1,4 @@
-// /* global init, assertFailure, dump, state */
+// // /* global init, assertFailure, dump, state */
 'use strict';
 
 require('../_init');
@@ -14,13 +14,12 @@ describe('Connector CREATE and UPDATE', () => {
 
     it("should be able to create objects", (next) => {
 
-        const _model = Arrow.Model.getModel('appc.loki.js/users');
+        const __model = Arrow.Model.getModel('appc.loki.js/users');
         const newModel = {
             name: 'Fiodor Zaiuchuk',
             weapons: "['ram']",
             Age: "44"
         };
-        let __model = Arrow.Model.getModel('appc.loki.js/users');
     
         __model.create(newModel, (_error, _instance) => {
             should(_error).be.not.ok;
@@ -38,19 +37,20 @@ describe('Connector CREATE and UPDATE', () => {
             Age: "42"
         };
 
-        var instance = _model.instance(newObject);
+        // var instance = _model.instance(newObject);
 
-        _model.save(instance, (err, resp) => {
+        _model.upsert(__instance.getPrimaryKey(), newObject, (err, resp) => {
             should(err).not.be.ok;
             should(resp).be.ok;
             next();
         });
     });
 
-    it("should be able to delete objects", (next) => {
+    after("should be able to delete objects", (next) => {
         const _model = Arrow.Model.getModel('appc.loki.js/users');
         _model.delete(__instance, (err, resp) => {
             should(err).not.be.ok;
+            should(resp).be.ok;
             next();
         });
     });
