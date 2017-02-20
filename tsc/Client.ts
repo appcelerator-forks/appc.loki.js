@@ -96,8 +96,9 @@ export class Client {
                 throw new Error('error opening file: ' + err);
             }
             fs.write(fd, "", "UTF-8", function (err) {
-                if (err)
+                if (err){
                     throw new Error('error writing file: ' + err);
+                }                    
                 fs.close(fd);
             });
         });
