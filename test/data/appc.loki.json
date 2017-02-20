@@ -1,65 +1,58 @@
 {
-  "filename": "/Users/marinvasilev/Projects/appcelerator/appc.lokijs/test/data/appc.loki.json",
+  "filename": "/Users/marinvasilev/Projects/appcelerator/appc.lokijs/data/appc.loki.json",
   "collections": [
     {
       "name": "users",
       "data": [
         {
           "name": "Gustavson",
-          "weapons": [
-            "Molmir"
-          ],
-          "Age": 32,
+          "waepons": "[\"Molmir\"]",
+          "Age": "32",
           "meta": {
-            "revision": 2,
-            "created": 1481039112667,
-            "version": 0,
-            "updated": 1481739057630
+            "revision": 0,
+            "created": 1485258735184,
+            "version": 0
           },
           "$loki": 1
         },
         {
           "name": "Gunar Bersaki",
-          "weapons": "[\"BFG\", \"Rocket Launcher\"]",
-          "Age": 45,
+          "waepons": "[\\\"BFG\\\", \\\"Rocket Launcher\\\"]",
+          "Age": "45",
           "meta": {
-            "revision": 1,
-            "created": 1481739737259,
-            "version": 0,
-            "updated": 1481740562150
+            "revision": 0,
+            "created": 1485258753847,
+            "version": 0
           },
-          "$loki": 5
+          "$loki": 2
         },
         {
           "name": "Gunar Bersaki",
-          "weapons": [
-            "sword"
-          ],
-          "Age": 14,
+          "waepons": "[\"sword\"]",
+          "Age": "14",
           "meta": {
-            "revision": 1,
-            "created": 1481739737261,
-            "version": 0,
-            "updated": 1481740562160
+            "revision": 0,
+            "created": 1485258790118,
+            "version": 0
           },
-          "$loki": 6
+          "$loki": 3
         }
       ],
       "idIndex": [
         1,
-        5,
-        6
+        2,
+        3
       ],
       "binaryIndices": {},
       "constraints": null,
       "uniqueNames": [],
       "transforms": {},
       "objType": "users",
-      "dirty": false,
+      "dirty": true,
       "cachedIndex": null,
       "cachedBinaryIndex": null,
       "cachedData": null,
-      "adaptiveBinaryIndices": false,
+      "adaptiveBinaryIndices": true,
       "transactional": false,
       "cloneObjects": false,
       "cloneMethod": "parse-stringify",
@@ -67,7 +60,7 @@
       "disableChangesApi": true,
       "autoupdate": false,
       "ttl": null,
-      "maxId": 106,
+      "maxId": 3,
       "DynamicViews": [],
       "events": {
         "insert": [
@@ -91,7 +84,7 @@
       "changes": []
     }
   ],
-  "databaseVersion": 1.1,
+  "databaseVersion": 1,
   "engineVersion": 1.1,
   "autosave": false,
   "autosaveInterval": 5000,

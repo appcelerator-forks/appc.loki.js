@@ -44,6 +44,9 @@ jspm_packages
 coverage
 coverage/
 
+# Models
+models/
+
 #Auto generated path
 a7166999e98af6226d9c5c538a4db0aa
 
