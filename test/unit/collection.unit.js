@@ -5,7 +5,7 @@ require('../_init');
 
 const should = require('should'),
     _ = require('underscore'),
-    Arrow = require('Arrow'),
+    Arrow = require('arrow'),
     Collection = require('../../lib/utils/Collection').Collection,
     Client = require('../../lib/utils/Client').Client;
 

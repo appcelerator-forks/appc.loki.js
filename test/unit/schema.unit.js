@@ -5,7 +5,7 @@ require('../_init');
 
 const should = require('should'),
     _ = require('underscore'),
-    Arrow = require('Arrow'),
+    Arrow = require('arrow'),
     Schema = require('../../lib/utils/Schema').Schema;
 
 describe('Schema', () => {

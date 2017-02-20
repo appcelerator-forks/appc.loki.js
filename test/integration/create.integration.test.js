@@ -5,7 +5,7 @@ require('../_init');
 
 var should = require('should'),
     request = require('request'),
-    Arrow = require('Arrow');
+    Arrow = require('arrow');
 
 describe('Create Api tests', (done) => {
     init(this);
@@ -25,7 +25,6 @@ describe('Create Api tests', (done) => {
         connector = this.connector;
         server = new Arrow();
         connector.config.requireSessionLogin = true;
-        dump(connector.config);
         urlToHit = 'http://localhost:' + server.port + '/api/appc.loki.js/users';
         options = {
             "url": urlToHit,
@@ -44,6 +43,7 @@ describe('Create Api tests', (done) => {
         it('should create new records', function (next) {
             request(options, function (err, response, body) {
                 location = response.headers.location;
+                console.log(body);
                 should(response.statusCode).be.equal(201);
                 next();
             });

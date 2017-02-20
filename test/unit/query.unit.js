@@ -5,7 +5,7 @@ require('../_init');
 
 const should = require('should'),
     _ = require('underscore'),
-    Arrow = require('Arrow'),
+    Arrow = require('arrow'),
     Collection = require('../../lib/utils/Collection').Collection,
     Client = require('../../lib/utils/Client').Client,
     Query = require('../../lib/utils/Query').Query;
@@ -62,9 +62,10 @@ describe('Connector query', () => {
     it("should query for an object", (next) => {
         const _model = Arrow.Model.getModel('appc.loki.js/users');
         var options = {
-            where: {'$eq' : { Age : 32 } }
+            where: {'$eq' : { Age : "32" } }
         };
         _model.query(options, (err, resp) => {
+            dump(resp);
             should(err).not.be.ok;
             should(resp).be.ok;
             should(resp).be.Array;
@@ -76,7 +77,7 @@ describe('Connector query', () => {
     it("should query for none existing object", (next) => {
         const _model = Arrow.Model.getModel('appc.loki.js/users');
         var options = {
-            where: {'$gt' : { Age : 80 } }
+            where: {'$gt' : { Age : "80" } }
         };
         _model.query(options, (err, resp) => {
             should(err).not.be.ok;

@@ -5,7 +5,7 @@ require('../_init');
 
 const should = require('should'),
     _ = require('underscore'),
-    Arrow = require('Arrow'),
+    Arrow = require('arrow'),
     Configuration = require('../../lib/utils/Configuration').default;
 
 describe('Configuration', () => {

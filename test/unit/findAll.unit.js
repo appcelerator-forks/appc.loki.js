@@ -4,7 +4,7 @@ require('../_init');
 
 var should = require('should'),
     _ = require('underscore'),
-    Arrow = require('Arrow');
+    Arrow = require('arrow');
 
 describe('Connector findAll', () => {
     var self = this;

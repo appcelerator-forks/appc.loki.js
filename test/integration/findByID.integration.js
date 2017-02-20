@@ -6,7 +6,7 @@ require('../_init');
 
 var should = require('should'),
     _ = require('underscore'),
-    Arrow = require('Arrow'),
+    Arrow = require('arrow'),
     request = require('request');
 
 describe('FindByID Api tests', () => {

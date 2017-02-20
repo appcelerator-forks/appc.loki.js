@@ -5,7 +5,7 @@ require('../_init');
 
 var should = require('should'),
     request = require('request'),
-    Arrow = require('Arrow');
+    Arrow = require('arrow');
 
 describe('Update Api tests', (done) => {
     init(this);

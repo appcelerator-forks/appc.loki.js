@@ -1,12 +1,12 @@
 {
-  "filename": "/Users/marinvasilev/Projects/appcelerator/appc.lokijs/data/appc.loki.json",
+  "filename": "/Users/marinvasilev/Projects/appcelerator/remoteloki/test/data/appc.loki.json",
   "collections": [
     {
       "name": "users",
       "data": [
         {
           "name": "Gustavson",
-          "waepons": "[\"Molmir\"]",
+          "weapons": "[\"Molmir\"]",
           "Age": "32",
           "meta": {
             "revision": 0,
@@ -17,7 +17,7 @@
         },
         {
           "name": "Gunar Bersaki",
-          "waepons": "[\\\"BFG\\\", \\\"Rocket Launcher\\\"]",
+          "weapons": "[\\\"BFG\\\", \\\"Rocket Launcher\\\"]",
           "Age": "45",
           "meta": {
             "revision": 0,
@@ -28,7 +28,7 @@
         },
         {
           "name": "Gunar Bersaki",
-          "waepons": "[\"sword\"]",
+          "weapons": "[\"sword\"]",
           "Age": "14",
           "meta": {
             "revision": 0,
@@ -48,7 +48,7 @@
       "uniqueNames": [],
       "transforms": {},
       "objType": "users",
-      "dirty": true,
+      "dirty": false,
       "cachedIndex": null,
       "cachedBinaryIndex": null,
       "cachedData": null,
@@ -60,7 +60,7 @@
       "disableChangesApi": true,
       "autoupdate": false,
       "ttl": null,
-      "maxId": 3,
+      "maxId": 63,
       "DynamicViews": [],
       "events": {
         "insert": [
@@ -89,10 +89,15 @@
   "autosave": false,
   "autosaveInterval": 5000,
   "autosaveHandle": null,
+  "throttledSaves": true,
   "options": {
     "autoload": true,
     "serializationMethod": "pretty",
-    "destructureDelimiter": "$<\n"
+    "destructureDelimiter": "$<\n",
+    "recursiveWait": true,
+    "recursiveWaitLimit": false,
+    "recursiveWaitLimitDuration": 2000,
+    "started": 1487603467269
   },
   "persistenceMethod": "fs",
   "persistenceAdapter": null,
